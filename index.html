@@ -8,166 +8,189 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --purple-50: #EEEDFE; --purple-100: #CECBF6; --purple-200: #AFA9EC;
-      --purple-400: #7F77DD; --purple-600: #534AB7; --purple-800: #3C3489; --purple-900: #26215C;
-      --teal-50: #E1F5EE; --teal-400: #1D9E75; --teal-600: #0F6E56; --teal-800: #085041;
-      --amber-50: #FAEEDA; --amber-400: #EF9F27; --amber-600: #BA7517; --amber-800: #633806;
-      --blue-50: #E6F1FB; --blue-400: #378ADD; --blue-600: #185FA5; --blue-800: #0C447C;
-      --green-50: #EAF3DE; --green-400: #639922; --green-600: #3B6D11; --green-800: #27500A;
-      --red-50: #FCEBEB; --red-200: #F09595; --red-600: #A32D2D; --red-800: #791F1F;
-      --gray-100: #D3D1C7; --gray-200: #B4B2A9; --gray-400: #888780;
-      --bg: #f5f5f0; --surface: #ffffff; --border: rgba(0,0,0,0.12);
-      --text: #1a1a1a; --text-muted: #666;
-      --radius: 8px; --radius-lg: 12px;
+      --purple-50:#EEEDFE;--purple-100:#CECBF6;--purple-200:#AFA9EC;--purple-400:#7F77DD;--purple-600:#534AB7;--purple-800:#3C3489;--purple-900:#26215C;
+      --teal-50:#E1F5EE;--teal-400:#1D9E75;--teal-600:#0F6E56;--teal-800:#085041;
+      --amber-50:#FAEEDA;--amber-400:#EF9F27;--amber-600:#BA7517;--amber-800:#633806;
+      --blue-50:#E6F1FB;--blue-400:#378ADD;--blue-600:#185FA5;--blue-800:#0C447C;
+      --green-50:#EAF3DE;--green-400:#639922;--green-600:#3B6D11;--green-800:#27500A;
+      --red-50:#FCEBEB;--red-200:#F09595;--red-600:#A32D2D;--red-800:#791F1F;
+      --coral-50:#FAECE7;--coral-600:#993C1D;--coral-800:#712B13;
+      --gray-200:#B4B2A9;--gray-400:#888780;
+      --bg:#f5f5f0;--surface:#ffffff;--border:rgba(0,0,0,0.12);
+      --text:#1a1a1a;--text-muted:#666;
+      --radius:8px;--radius-lg:12px;
     }
-    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
-    .app { max-width: 720px; margin: 0 auto; padding: 1rem; }
+    body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+    .app { max-width:720px; margin:0 auto; padding:1rem; }
 
-    .nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
-      padding: 0.75rem 1rem; background: var(--surface); border: 0.5px solid var(--border);
-      border-radius: var(--radius-lg); margin-bottom: 1.25rem; }
-    .nav-logo { font-size: 16px; font-weight: 600; color: var(--purple-600); display: flex; align-items: center; gap: 6px; }
-    .nav-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
-    .nav-tab { padding: 5px 10px; border-radius: var(--radius); font-size: 12px; cursor: pointer;
-      border: 0.5px solid transparent; color: var(--text-muted); background: transparent;
-      transition: all 0.15s; display: flex; align-items: center; gap: 4px; }
-    .nav-tab:hover { background: #f0f0ea; }
-    .nav-tab.active { background: var(--purple-50); color: var(--purple-800); border-color: var(--purple-200); font-weight: 500; }
+    /* NAV */
+    .nav { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; padding:0.75rem 1rem; background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); margin-bottom:1.25rem; }
+    .nav-logo { font-size:16px; font-weight:600; color:var(--purple-600); display:flex; align-items:center; gap:6px; }
+    .nav-tabs { display:flex; gap:4px; flex-wrap:wrap; }
+    .nav-tab { padding:5px 9px; border-radius:var(--radius); font-size:12px; cursor:pointer; border:0.5px solid transparent; color:var(--text-muted); background:transparent; transition:all 0.15s; display:flex; align-items:center; gap:4px; font-family:inherit; }
+    .nav-tab:hover { background:#f0f0ea; }
+    .nav-tab.active { background:var(--purple-50); color:var(--purple-800); border-color:var(--purple-200); font-weight:600; }
 
-    .page { display: none; }
-    .page.active { display: block; }
+    .page { display:none; }
+    .page.active { display:block; }
 
-    .hero { background: var(--purple-50); border-radius: var(--radius-lg); padding: 1.5rem;
-      margin-bottom: 1.25rem; display: flex; align-items: center; gap: 1rem; }
-    .hero-icon { font-size: 40px; color: var(--purple-600); flex-shrink: 0; }
-    .hero-title { font-size: 22px; font-weight: 600; color: var(--purple-900); }
-    .hero-sub { font-size: 14px; color: var(--purple-800); margin-top: 4px; line-height: 1.5; }
+    /* HERO */
+    .hero { background:var(--purple-50); border-radius:var(--radius-lg); padding:1.5rem; margin-bottom:1.25rem; display:flex; align-items:center; gap:1rem; }
+    .hero-icon { font-size:40px; color:var(--purple-600); flex-shrink:0; }
+    .hero-title { font-size:22px; font-weight:700; color:var(--purple-900); }
+    .hero-sub { font-size:14px; color:var(--purple-800); margin-top:4px; line-height:1.5; }
 
-    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
-    .home-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg);
-      padding: 1rem; cursor: pointer; transition: all 0.15s; }
-    .home-card:hover { border-color: var(--purple-600); background: var(--purple-50); transform: translateY(-2px); }
-    .home-card-icon { font-size: 24px; margin-bottom: 8px; }
-    .home-card-title { font-size: 14px; font-weight: 600; color: var(--text); }
-    .home-card-desc { font-size: 12px; color: var(--text-muted); margin-top: 3px; line-height: 1.4; }
-    .pill { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 99px; margin-top: 6px; font-weight: 500; }
-    .pill-purple { background: var(--purple-50); color: var(--purple-800); }
-    .pill-teal   { background: var(--teal-50);   color: var(--teal-800); }
-    .pill-amber  { background: var(--amber-50);  color: var(--amber-800); }
-    .pill-blue   { background: var(--blue-50);   color: var(--blue-800); }
-    .pill-green  { background: var(--green-50);  color: var(--green-800); }
+    /* HOME CARDS */
+    .cards-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; }
+    .home-card { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:1rem; cursor:pointer; transition:all 0.15s; }
+    .home-card:hover { border-color:var(--purple-600); background:var(--purple-50); transform:translateY(-2px); }
+    .home-card-icon { font-size:24px; margin-bottom:8px; }
+    .home-card-title { font-size:14px; font-weight:600; color:var(--text); }
+    .home-card-desc { font-size:12px; color:var(--text-muted); margin-top:3px; line-height:1.4; }
+    .pill { display:inline-block; font-size:11px; padding:2px 8px; border-radius:99px; margin-top:6px; font-weight:500; }
+    .pill-purple { background:var(--purple-50); color:var(--purple-800); }
+    .pill-teal   { background:var(--teal-50);   color:var(--teal-800); }
+    .pill-amber  { background:var(--amber-50);  color:var(--amber-800); }
+    .pill-blue   { background:var(--blue-50);   color:var(--blue-800); }
+    .pill-green  { background:var(--green-50);  color:var(--green-800); }
+    .pill-coral  { background:var(--coral-50);  color:var(--coral-800); }
 
-    .sec-title { font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
-    .sec-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.5; }
+    .sec-title { font-size:20px; font-weight:700; color:var(--text); margin-bottom:4px; }
+    .sec-sub { font-size:14px; color:var(--text-muted); margin-bottom:1.25rem; line-height:1.5; }
 
-    /* QUIZ */
-    .q-counter { font-size: 13px; color: var(--text-muted); text-align: right; margin-bottom: 4px; }
-    .prog-bar { background: #e8e8e0; border-radius: 99px; height: 7px; margin-bottom: 1.25rem; }
-    .prog-fill { height: 100%; border-radius: 99px; background: var(--purple-600); transition: width 0.4s; }
-    .scene-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1rem; }
-    .scene-illus { background: var(--purple-50); border-radius: var(--radius); padding: 1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; min-height: 80px; }
-    .avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-    .av-blue { background: #B5D4F4; } .av-red { background: #F7C1C1; }
-    .av-yellow { background: #FAC775; } .av-green { background: #C0DD97; }
-    .char { display: flex; flex-direction: column; align-items: center; gap: 3px; flex-shrink: 0; }
-    .char-name { font-size: 10px; color: var(--purple-800); font-weight: 600; }
-    .bubble { background: white; border: 0.5px solid var(--purple-200); border-radius: 10px; padding: 8px 12px; font-size: 13px; flex: 1; line-height: 1.5; }
-    .bubble-danger { background: var(--red-50); border-color: var(--red-200); }
-    .scene-txt { font-size: 14px; line-height: 1.6; }
-    .q-label { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 0.5rem; }
-    .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .choice { padding: 0.85rem; border: 0.5px solid var(--border); border-radius: var(--radius); background: var(--surface); cursor: pointer; font-size: 14px; font-family: inherit; transition: all 0.15s; }
-    .choice:hover { background: #f0f0ea; border-color: var(--purple-600); }
-    .choice.correct { background: var(--green-50); border-color: var(--green-600); color: var(--green-800); }
-    .choice.wrong { background: var(--red-50); border-color: var(--red-600); color: var(--red-800); }
-    .choice.show-correct { background: var(--green-50); border-color: var(--green-600); color: var(--green-800); }
-    .feedback-box { border-radius: var(--radius); padding: 0.85rem; margin-top: 0.85rem; font-size: 13px; line-height: 1.6; display: none; }
-    .feedback-box.show { display: block; }
-    .fb-good { background: var(--green-50); color: var(--green-800); border: 0.5px solid var(--green-600); }
-    .fb-bad  { background: var(--red-50);   color: var(--red-800);   border: 0.5px solid var(--red-600); }
-    .next-btn { width: 100%; margin-top: 0.85rem; padding: 0.75rem; border-radius: var(--radius); background: var(--purple-600); color: white; border: none; cursor: pointer; font-size: 14px; font-weight: 600; font-family: inherit; display: none; transition: opacity 0.2s; }
-    .next-btn:hover { opacity: 0.85; }
-    .next-btn.show { display: block; }
-    .score-wrap { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; text-align: center; display: none; }
-    .score-wrap.show { display: block; }
-    .score-big { font-size: 44px; font-weight: 700; color: var(--purple-600); }
-    .score-lbl { font-size: 15px; color: var(--text-muted); margin: 4px 0 1rem; }
-    .score-msg { font-size: 14px; background: var(--purple-50); border-radius: var(--radius); padding: 1rem; line-height: 1.6; margin-bottom: 1rem; color: var(--purple-900); }
-    .restart-btn { padding: 0.65rem 1.5rem; background: var(--purple-600); color: white; border: none; border-radius: var(--radius); cursor: pointer; font-size: 14px; font-family: inherit; font-weight: 600; }
+    /* SHARED QUIZ STYLES */
+    .prog-row { display:flex; align-items:center; gap:10px; margin-bottom:1rem; }
+    .prog-bar { flex:1; background:#e8e8e0; border-radius:99px; height:7px; }
+    .prog-fill { height:100%; border-radius:99px; background:var(--purple-600); transition:width 0.4s; }
+    .prog-lbl { font-size:12px; color:var(--text-muted); white-space:nowrap; }
+    .scene-card { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; margin-bottom:1rem; }
+    .feedback-box { border-radius:var(--radius); padding:0.85rem; margin-top:0.85rem; font-size:13px; line-height:1.6; display:none; }
+    .feedback-box.show { display:block; }
+    .fb-good { background:var(--green-50); color:var(--green-800); border:0.5px solid var(--green-600); }
+    .fb-bad  { background:var(--red-50);   color:var(--red-800);   border:0.5px solid var(--red-600); }
+    .fb-title { font-weight:600; margin-bottom:4px; font-size:14px; }
+    .next-btn { width:100%; margin-top:0.85rem; padding:0.75rem; border-radius:var(--radius); background:var(--purple-600); color:white; border:none; cursor:pointer; font-size:14px; font-weight:600; font-family:inherit; display:none; transition:opacity 0.2s; }
+    .next-btn:hover { opacity:0.85; }
+    .next-btn.show { display:block; }
+    .score-wrap { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:2rem; text-align:center; display:none; }
+    .score-wrap.show { display:block; }
+    .score-big { font-size:44px; font-weight:700; color:var(--purple-600); }
+    .score-lbl { font-size:15px; color:var(--text-muted); margin:4px 0 1rem; }
+    .score-msg { font-size:14px; background:var(--purple-50); border-radius:var(--radius); padding:1rem; line-height:1.6; color:var(--purple-900); margin-bottom:1rem; }
+    .restart-btn { padding:0.65rem 1.5rem; background:var(--purple-600); color:white; border:none; border-radius:var(--radius); cursor:pointer; font-size:14px; font-family:inherit; font-weight:600; }
+
+    /* QUIZ 1 — ¿Esto es bullying? */
+    .scene-illus { background:var(--purple-50); border-radius:var(--radius); padding:1rem; margin-bottom:1rem; display:flex; align-items:center; gap:10px; min-height:80px; }
+    .avatar { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+    .av-blue{background:#B5D4F4;} .av-red{background:#F7C1C1;} .av-yellow{background:#FAC775;} .av-green{background:#C0DD97;}
+    .char { display:flex; flex-direction:column; align-items:center; gap:3px; flex-shrink:0; }
+    .char-name { font-size:10px; color:var(--purple-800); font-weight:600; }
+    .bubble { background:white; border:0.5px solid var(--purple-200); border-radius:10px; padding:8px 12px; font-size:13px; flex:1; line-height:1.5; }
+    .bubble-danger { background:var(--red-50); border-color:var(--red-200); }
+    .scene-txt { font-size:14px; line-height:1.6; color:var(--text); }
+    .q-label { font-size:13px; font-weight:600; color:var(--text-muted); margin-bottom:0.5rem; }
+    .choices { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .choice { padding:0.85rem; border:0.5px solid var(--border); border-radius:var(--radius); background:var(--surface); cursor:pointer; font-size:14px; font-family:inherit; transition:all 0.15s; color:var(--text); }
+    .choice:hover { background:#f0f0ea; border-color:var(--purple-600); }
+    .choice.correct { background:var(--green-50); border-color:var(--green-600); color:var(--green-800); }
+    .choice.wrong   { background:var(--red-50);   border-color:var(--red-600);   color:var(--red-800); }
+    .choice.show-correct { background:var(--green-50); border-color:var(--green-600); color:var(--green-800); }
+
+    /* QUIZ 2 — ¿Qué harías tú? */
+    .scene-header { display:flex; align-items:center; gap:10px; margin-bottom:1rem; padding-bottom:0.75rem; border-bottom:0.5px solid var(--border); }
+    .scene-emoji { width:48px; height:48px; border-radius:50%; background:var(--purple-50); display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+    .scene-place { font-size:12px; color:var(--purple-600); font-weight:600; background:var(--purple-50); padding:3px 10px; border-radius:99px; }
+    .options-list { display:flex; flex-direction:column; gap:8px; margin-bottom:1rem; }
+    .opt-btn { display:flex; align-items:flex-start; gap:10px; padding:0.85rem 1rem; border:0.5px solid var(--border); border-radius:var(--radius); background:var(--surface); cursor:pointer; font-family:inherit; font-size:14px; color:var(--text); text-align:left; transition:all 0.15s; width:100%; line-height:1.5; }
+    .opt-btn:hover:not(:disabled) { background:#f0f0ea; border-color:var(--purple-600); }
+    .opt-letter { width:24px; height:24px; border-radius:50%; background:#f0f0ea; color:var(--text-muted); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:600; flex-shrink:0; }
+    .opt-btn.correct { background:var(--green-50); border-color:var(--green-600); }
+    .opt-btn.correct .opt-letter { background:var(--green-600); color:white; }
+    .opt-btn.correct .opt-text  { color:var(--green-800); }
+    .opt-btn.wrong { background:var(--red-50); border-color:var(--red-600); }
+    .opt-btn.wrong .opt-letter  { background:var(--red-600); color:white; }
+    .opt-btn.wrong .opt-text    { color:var(--red-800); }
+    .opt-btn.reveal { background:var(--green-50); border-color:var(--green-600); opacity:0.7; }
+    .opt-btn.reveal .opt-letter { background:var(--green-600); color:white; }
+    .opt-btn.reveal .opt-text   { color:var(--green-800); }
 
     /* GUIA */
-    .steps-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.25rem; }
-    .step-item { display: flex; gap: 12px; align-items: flex-start; background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1rem; }
-    .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--purple-600); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
-    .step-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
-    .step-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-    .step-icon { font-size: 20px; color: var(--text-muted); flex-shrink: 0; }
-    .tip-box { background: var(--teal-50); border: 0.5px solid var(--teal-400); border-radius: var(--radius); padding: 1rem; font-size: 13px; color: var(--teal-800); line-height: 1.6; display: flex; gap: 8px; align-items: flex-start; }
+    .steps-list { display:flex; flex-direction:column; gap:10px; margin-bottom:1.25rem; }
+    .step-item { display:flex; gap:12px; align-items:flex-start; background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:1rem; }
+    .step-num { width:32px; height:32px; border-radius:50%; background:var(--purple-600); color:white; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; flex-shrink:0; }
+    .step-title { font-size:14px; font-weight:600; color:var(--text); margin-bottom:3px; }
+    .step-desc  { font-size:13px; color:var(--text-muted); line-height:1.5; }
+    .step-icon  { font-size:20px; color:var(--text-muted); flex-shrink:0; }
+    .tip-box { background:var(--teal-50); border:0.5px solid var(--teal-400); border-radius:var(--radius); padding:1rem; font-size:13px; color:var(--teal-800); line-height:1.6; display:flex; gap:8px; align-items:flex-start; }
 
     /* REPORTE */
-    .anon-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--teal-50); color: var(--teal-800); border: 0.5px solid var(--teal-400); border-radius: var(--radius); padding: 8px 12px; font-size: 13px; margin-bottom: 1rem; }
-    .form-group { margin-bottom: 1rem; }
-    .form-label { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; display: block; }
-    select, textarea { width: 100%; padding: 8px 10px; border: 0.5px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--text); font-size: 14px; font-family: inherit; }
-    textarea { min-height: 80px; resize: vertical; }
-    select:focus, textarea:focus { outline: none; border-color: var(--purple-600); }
-    .submit-btn { width: 100%; padding: 0.75rem; background: var(--purple-600); color: white; border: none; border-radius: var(--radius); cursor: pointer; font-size: 15px; font-weight: 600; font-family: inherit; transition: opacity 0.2s; }
-    .submit-btn:hover { opacity: 0.85; }
-    .success-msg { background: var(--green-50); border: 0.5px solid var(--green-600); border-radius: var(--radius-lg); padding: 2rem; text-align: center; display: none; }
-    .success-msg.show { display: block; }
-    .success-title { font-size: 20px; font-weight: 700; color: var(--green-800); margin-bottom: 6px; }
-    .success-sub { font-size: 14px; color: var(--green-600); line-height: 1.6; }
+    .anon-badge { display:inline-flex; align-items:center; gap:6px; background:var(--teal-50); color:var(--teal-800); border:0.5px solid var(--teal-400); border-radius:var(--radius); padding:8px 12px; font-size:13px; margin-bottom:1rem; }
+    .form-group { margin-bottom:1rem; }
+    .form-label { font-size:13px; font-weight:600; color:var(--text-muted); margin-bottom:6px; display:block; }
+    select,textarea { width:100%; padding:8px 10px; border:0.5px solid var(--border); border-radius:var(--radius); background:var(--surface); color:var(--text); font-size:14px; font-family:inherit; }
+    textarea { min-height:80px; resize:vertical; }
+    select:focus,textarea:focus { outline:none; border-color:var(--purple-600); }
+    .submit-btn { width:100%; padding:0.75rem; background:var(--purple-600); color:white; border:none; border-radius:var(--radius); cursor:pointer; font-size:15px; font-weight:600; font-family:inherit; transition:opacity 0.2s; }
+    .submit-btn:hover { opacity:0.85; }
+    .success-msg { background:var(--green-50); border:0.5px solid var(--green-600); border-radius:var(--radius-lg); padding:2rem; text-align:center; display:none; }
+    .success-msg.show { display:block; }
+    .success-title { font-size:20px; font-weight:700; color:var(--green-800); margin-bottom:6px; }
+    .success-sub   { font-size:14px; color:var(--green-600); line-height:1.6; }
 
     /* VIDEOS */
-    .videos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 1.25rem; }
-    .video-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; transition: all 0.15s; }
-    .video-card:hover { border-color: var(--purple-600); transform: translateY(-2px); }
-    .video-thumb { background: var(--purple-50); height: 90px; display: flex; align-items: center; justify-content: center; font-size: 32px; color: var(--purple-600); }
-    .video-info { padding: 0.75rem; }
-    .video-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
-    .video-dur { font-size: 11px; color: var(--text-muted); }
-    .video-player { background: #f0f0ea; border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; display: none; }
-    .video-player.show { display: block; }
-    .player-title { font-size: 16px; font-weight: 600; margin-bottom: 0.75rem; }
-    .player-screen { background: var(--purple-900); border-radius: var(--radius); height: 150px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; margin-bottom: 0.75rem; }
-    .player-icon { font-size: 36px; color: white; }
-    .player-note { font-size: 12px; color: var(--purple-200); }
-    .player-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.75rem; }
-    .back-btn { font-size: 13px; color: var(--purple-600); cursor: pointer; background: none; border: none; font-family: inherit; font-weight: 600; }
+    .videos-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-bottom:1.25rem; }
+    .video-card { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; cursor:pointer; transition:all 0.15s; }
+    .video-card:hover { border-color:var(--purple-600); transform:translateY(-2px); }
+    .video-thumb { background:var(--purple-50); height:90px; display:flex; align-items:center; justify-content:center; font-size:32px; color:var(--purple-600); }
+    .video-info { padding:0.75rem; }
+    .video-title { font-size:13px; font-weight:600; color:var(--text); margin-bottom:3px; }
+    .video-dur   { font-size:11px; color:var(--text-muted); }
+    .video-player { background:#f0f0ea; border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; display:none; }
+    .video-player.show { display:block; }
+    .player-title  { font-size:16px; font-weight:600; margin-bottom:0.75rem; color:var(--text); }
+    .player-screen { background:var(--purple-900); border-radius:var(--radius); height:150px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; margin-bottom:0.75rem; }
+    .player-icon   { font-size:36px; color:white; }
+    .player-note   { font-size:12px; color:var(--purple-200); }
+    .player-desc   { font-size:13px; color:var(--text-muted); line-height:1.6; margin-bottom:0.75rem; }
+    .back-btn { font-size:13px; color:var(--purple-600); cursor:pointer; background:none; border:none; font-family:inherit; font-weight:600; }
 
     /* LOGROS */
-    .puntos-bar { background: var(--purple-50); border-radius: var(--radius-lg); padding: 1rem; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
-    .puntos-num { font-size: 32px; font-weight: 700; color: var(--purple-600); }
-    .puntos-info { font-size: 13px; color: var(--purple-800); line-height: 1.5; }
-    .logros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
-    .logro-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1rem; text-align: center; }
-    .logro-card.earned { border-color: var(--amber-400); background: var(--amber-50); }
-    .logro-card.locked { opacity: 0.45; }
-    .logro-icon { font-size: 30px; margin-bottom: 6px; }
-    .logro-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
-    .logro-desc { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
-    .logro-lbl { font-size: 11px; font-weight: 600; margin-top: 5px; }
-    .logro-lbl.earned { color: var(--amber-800); }
-    .logro-lbl.locked { color: var(--gray-400); }
+    .puntos-bar { background:var(--purple-50); border-radius:var(--radius-lg); padding:1rem; display:flex; align-items:center; gap:1rem; margin-bottom:1.25rem; }
+    .puntos-num  { font-size:32px; font-weight:700; color:var(--purple-600); }
+    .puntos-info { font-size:13px; color:var(--purple-800); line-height:1.5; }
+    .logros-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; }
+    .logro-card  { background:var(--surface); border:0.5px solid var(--border); border-radius:var(--radius-lg); padding:1rem; text-align:center; }
+    .logro-card.earned { border-color:var(--amber-400); background:var(--amber-50); }
+    .logro-card.locked { opacity:0.45; }
+    .logro-icon { font-size:30px; margin-bottom:6px; }
+    .logro-name { font-size:13px; font-weight:600; color:var(--text); margin-bottom:3px; }
+    .logro-desc { font-size:11px; color:var(--text-muted); line-height:1.4; }
+    .logro-lbl  { font-size:11px; font-weight:600; margin-top:5px; }
+    .logro-lbl.earned { color:var(--amber-800); }
+    .logro-lbl.locked { color:var(--gray-400); }
 
-    @media (max-width: 480px) {
-      .nav { flex-direction: column; align-items: flex-start; }
-      .nav-tabs { width: 100%; }
-      .nav-tab { flex: 1; justify-content: center; }
-      .hero { flex-direction: column; text-align: center; }
+    @media(max-width:480px){
+      .nav { flex-direction:column; align-items:flex-start; }
+      .nav-tabs { width:100%; }
+      .nav-tab  { flex:1; justify-content:center; }
+      .hero { flex-direction:column; text-align:center; }
+      .choices { grid-template-columns:1fr; }
     }
   </style>
 </head>
 <body>
 <div class="app">
+
+  <!-- NAV -->
   <nav class="nav">
     <div class="nav-logo"><i class="ti ti-shield-heart"></i> BuenTrato</div>
     <div class="nav-tabs">
-      <button class="nav-tab active" onclick="goTo('home')"><i class="ti ti-home"></i> Inicio</button>
-      <button class="nav-tab" onclick="goTo('quiz')"><i class="ti ti-help-circle"></i> Quiz</button>
+      <button class="nav-tab active"  onclick="goTo('home')"><i class="ti ti-home"></i> Inicio</button>
+      <button class="nav-tab" onclick="goTo('quiz1')"><i class="ti ti-help-circle"></i> ¿Es bullying?</button>
+      <button class="nav-tab" onclick="goTo('quiz2')"><i class="ti ti-player-play"></i> ¿Qué harías?</button>
       <button class="nav-tab" onclick="goTo('guia')"><i class="ti ti-map"></i> ¿Qué hago?</button>
       <button class="nav-tab" onclick="goTo('reporte')"><i class="ti ti-message-report"></i> Reportar</button>
-      <button class="nav-tab" onclick="goTo('videos')"><i class="ti ti-player-play"></i> Videos</button>
+      <button class="nav-tab" onclick="goTo('videos')"><i class="ti ti-video"></i> Videos</button>
       <button class="nav-tab" onclick="goTo('logros')"><i class="ti ti-star"></i> Logros</button>
     </div>
   </nav>
@@ -182,11 +205,17 @@
       </div>
     </div>
     <div class="cards-grid">
-      <div class="home-card" onclick="goTo('quiz')">
+      <div class="home-card" onclick="goTo('quiz1')">
         <div class="home-card-icon" style="color:var(--purple-600)"><i class="ti ti-help-circle"></i></div>
         <div class="home-card-title">¿Esto es bullying?</div>
-        <div class="home-card-desc">Pon a prueba lo que sabes con situaciones reales</div>
+        <div class="home-card-desc">Decide si cada situación es bullying o no</div>
         <span class="pill pill-purple">Quiz interactivo</span>
+      </div>
+      <div class="home-card" onclick="goTo('quiz2')">
+        <div class="home-card-icon" style="color:var(--coral-600)"><i class="ti ti-player-play"></i></div>
+        <div class="home-card-title">¿Qué harías tú?</div>
+        <div class="home-card-desc">Elige la mejor respuesta ante situaciones reales</div>
+        <span class="pill pill-coral">Opciones múltiples</span>
       </div>
       <div class="home-card" onclick="goTo('guia')">
         <div class="home-card-icon" style="color:var(--teal-400)"><i class="ti ti-map"></i></div>
@@ -201,7 +230,7 @@
         <span class="pill pill-amber">Anónimo y seguro</span>
       </div>
       <div class="home-card" onclick="goTo('videos')">
-        <div class="home-card-icon" style="color:var(--blue-600)"><i class="ti ti-player-play"></i></div>
+        <div class="home-card-icon" style="color:var(--blue-600)"><i class="ti ti-video"></i></div>
         <div class="home-card-title">Aprende más</div>
         <div class="home-card-desc">Videos cortos sobre el buen trato</div>
         <span class="pill pill-blue">Videos informativos</span>
@@ -209,34 +238,66 @@
       <div class="home-card" onclick="goTo('logros')">
         <div class="home-card-icon" style="color:var(--amber-600)"><i class="ti ti-star"></i></div>
         <div class="home-card-title">Mis logros</div>
-        <div class="home-card-desc">Gana insignias y conviértete en defensor del buen trato</div>
+        <div class="home-card-desc">Gana insignias y sé un defensor del buen trato</div>
         <span class="pill pill-green">3 insignias ganadas</span>
       </div>
     </div>
   </div>
 
-  <!-- QUIZ -->
-  <div id="page-quiz" class="page">
+  <!-- QUIZ 1: ¿Esto es bullying? -->
+  <div id="page-quiz1" class="page">
     <div class="sec-title">¿Esto es bullying?</div>
     <div class="sec-sub">Lee cada situación y decide si es bullying o no. ¡Al final te explicamos por qué!</div>
-    <div id="quiz-area">
-      <div class="q-counter" id="q-counter">Situación 1 de 4</div>
-      <div class="prog-bar"><div class="prog-fill" id="q-prog" style="width:25%"></div></div>
+    <div id="q1-area">
+      <div class="prog-row">
+        <div class="prog-bar"><div class="prog-fill" id="q1-prog" style="width:25%"></div></div>
+        <div class="prog-lbl" id="q1-lbl">1 de 4</div>
+      </div>
       <div class="scene-card">
-        <div class="scene-illus" id="q-illus"></div>
-        <div class="scene-txt" id="q-txt"></div>
+        <div class="scene-illus" id="q1-illus"></div>
+        <div class="scene-txt"  id="q1-txt"></div>
       </div>
       <div class="q-label">¿Esto es bullying?</div>
-      <div class="choices" id="q-choices"></div>
-      <div class="feedback-box" id="q-feedback"></div>
-      <button class="next-btn" id="q-next">Siguiente situación →</button>
+      <div class="choices" id="q1-choices"></div>
+      <div class="feedback-box" id="q1-feedback"></div>
+      <button class="next-btn" id="q1-next">Siguiente situación →</button>
     </div>
-    <div class="score-wrap" id="q-score">
-      <div style="font-size:36px;" id="q-stars"></div>
-      <div class="score-big" id="q-score-num"></div>
-      <div class="score-lbl" id="q-score-lbl"></div>
-      <div class="score-msg" id="q-score-msg"></div>
-      <button class="restart-btn" onclick="quizRestart()">Jugar de nuevo</button>
+    <div class="score-wrap" id="q1-score">
+      <div style="font-size:36px" id="q1-stars"></div>
+      <div class="score-big" id="q1-score-num"></div>
+      <div class="score-lbl"  id="q1-score-lbl"></div>
+      <div class="score-msg"  id="q1-score-msg"></div>
+      <button class="restart-btn" onclick="q1Restart()">Jugar de nuevo</button>
+    </div>
+  </div>
+
+  <!-- QUIZ 2: ¿Qué harías tú? -->
+  <div id="page-quiz2" class="page">
+    <div class="sec-title">¿Qué harías tú?</div>
+    <div class="sec-sub">Lee la situación y elige la mejor respuesta. ¡Hay una opción correcta en cada pregunta!</div>
+    <div id="q2-area">
+      <div class="prog-row">
+        <div class="prog-bar"><div class="prog-fill" id="q2-prog" style="width:20%"></div></div>
+        <div class="prog-lbl" id="q2-lbl">1 de 5</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-header">
+          <div class="scene-emoji" id="q2-emoji"></div>
+          <div class="scene-place" id="q2-place"></div>
+        </div>
+        <div class="scene-txt" id="q2-txt"></div>
+      </div>
+      <div class="q-label" id="q2-qlbl"></div>
+      <div class="options-list" id="q2-options"></div>
+      <div class="feedback-box" id="q2-feedback"></div>
+      <button class="next-btn" id="q2-next">Siguiente situación →</button>
+    </div>
+    <div class="score-wrap" id="q2-score">
+      <div style="font-size:36px" id="q2-stars"></div>
+      <div class="score-big" id="q2-score-num"></div>
+      <div class="score-lbl"  id="q2-score-lbl"></div>
+      <div class="score-msg"  id="q2-score-msg"></div>
+      <button class="restart-btn" onclick="q2Restart()">Jugar de nuevo</button>
     </div>
   </div>
 
@@ -247,49 +308,31 @@
     <div class="steps-list">
       <div class="step-item">
         <div class="step-num">1</div>
-        <div style="flex:1">
-          <div class="step-title">No te rías ni aplaudas</div>
-          <div class="step-desc">Aunque todos lo hagan, no participar ya es una forma de ayudar. El agresor pierde poder cuando nadie lo apoya.</div>
-        </div>
+        <div style="flex:1"><div class="step-title">No te rías ni aplaudas</div><div class="step-desc">Aunque todos lo hagan, no participar ya es una forma de ayudar. El agresor pierde poder cuando nadie lo apoya.</div></div>
         <div class="step-icon"><i class="ti ti-mood-sad"></i></div>
       </div>
       <div class="step-item">
         <div class="step-num">2</div>
-        <div style="flex:1">
-          <div class="step-title">Aléjate con la víctima</div>
-          <div class="step-desc">Si es seguro, invita a tu compañero a alejarse del lugar. No tienes que enfrentarte al agresor.</div>
-        </div>
+        <div style="flex:1"><div class="step-title">Aléjate con la víctima</div><div class="step-desc">Si es seguro, invita a tu compañero a alejarse del lugar. No tienes que enfrentarte al agresor.</div></div>
         <div class="step-icon"><i class="ti ti-user-plus"></i></div>
       </div>
       <div class="step-item">
         <div class="step-num">3</div>
-        <div style="flex:1">
-          <div class="step-title">Dile que no está solo</div>
-          <div class="step-desc">Unas palabras hacen mucho: "Oye, ¿estás bien? No te preocupes, estoy aquí contigo."</div>
-        </div>
+        <div style="flex:1"><div class="step-title">Dile que no está solo</div><div class="step-desc">Unas palabras hacen mucho: "Oye, ¿estás bien? No te preocupes, estoy aquí contigo."</div></div>
         <div class="step-icon"><i class="ti ti-heart"></i></div>
       </div>
       <div class="step-item">
         <div class="step-num">4</div>
-        <div style="flex:1">
-          <div class="step-title">Avisa a un adulto de confianza</div>
-          <div class="step-desc">Tu profesora, el director o tus papás. Contarles no es "soplonería", es proteger a tu amigo.</div>
-        </div>
+        <div style="flex:1"><div class="step-title">Avisa a un adulto de confianza</div><div class="step-desc">Tu profesora, el director o tus papás. Contarles no es "soplonería", es proteger a tu amigo.</div></div>
         <div class="step-icon"><i class="ti ti-user-check"></i></div>
       </div>
       <div class="step-item">
         <div class="step-num">5</div>
-        <div style="flex:1">
-          <div class="step-title">También puedes reportar aquí</div>
-          <div class="step-desc">Si tienes miedo, usa nuestra sección de reporte anónimo. Nadie sabrá que fuiste tú.</div>
-        </div>
+        <div style="flex:1"><div class="step-title">También puedes reportar aquí</div><div class="step-desc">Si tienes miedo, usa nuestra sección de reporte anónimo. Nadie sabrá que fuiste tú.</div></div>
         <div class="step-icon"><i class="ti ti-message-report"></i></div>
       </div>
     </div>
-    <div class="tip-box">
-      <i class="ti ti-bulb" style="flex-shrink:0; margin-top:2px;"></i>
-      <span>Recuerda: no tienes que hacerlo solo. Lo más importante es no ignorarlo. Cada pequeña acción cuenta.</span>
-    </div>
+    <div class="tip-box"><i class="ti ti-bulb" style="flex-shrink:0;margin-top:2px"></i><span>Recuerda: no tienes que hacerlo solo. Lo más importante es no ignorarlo. Cada pequeña acción cuenta.</span></div>
   </div>
 
   <!-- REPORTE -->
@@ -302,10 +345,8 @@
         <label class="form-label">¿Dónde ocurrió?</label>
         <select id="r-lugar">
           <option value="">Elige un lugar...</option>
-          <option>En el recreo</option>
-          <option>En el salón de clases</option>
-          <option>En los pasillos</option>
-          <option>En el baño</option>
+          <option>En el recreo</option><option>En el salón de clases</option>
+          <option>En los pasillos</option><option>En el baño</option>
           <option>Por WhatsApp u otra red social</option>
           <option>En la entrada o salida del colegio</option>
         </select>
@@ -314,10 +355,8 @@
         <label class="form-label">¿Qué tipo de bullying fue?</label>
         <select id="r-tipo">
           <option value="">Elige un tipo...</option>
-          <option>Físico (golpes, empujones)</option>
-          <option>Verbal (insultos, burlas)</option>
-          <option>Exclusión (dejar fuera del grupo)</option>
-          <option>Por internet (ciberbullying)</option>
+          <option>Físico (golpes, empujones)</option><option>Verbal (insultos, burlas)</option>
+          <option>Exclusión (dejar fuera del grupo)</option><option>Por internet (ciberbullying)</option>
           <option>No estoy seguro</option>
         </select>
       </div>
@@ -329,19 +368,17 @@
         <label class="form-label">¿Cuántas veces has visto que esto pasa?</label>
         <select id="r-frecuencia">
           <option value="">Elige...</option>
-          <option>Solo una vez</option>
-          <option>Algunas veces</option>
-          <option>Casi todos los días</option>
-          <option>Todos los días</option>
+          <option>Solo una vez</option><option>Algunas veces</option>
+          <option>Casi todos los días</option><option>Todos los días</option>
         </select>
       </div>
       <button class="submit-btn" onclick="submitReport()">Enviar reporte <i class="ti ti-arrow-right"></i></button>
     </div>
     <div class="success-msg" id="r-success">
-      <div style="font-size:40px; color:var(--teal-400); margin-bottom:8px;"><i class="ti ti-circle-check"></i></div>
+      <div style="font-size:40px;color:var(--teal-400);margin-bottom:8px"><i class="ti ti-circle-check"></i></div>
       <div class="success-title">¡Gracias por tu valentía!</div>
       <div class="success-sub">Tu reporte fue enviado. Un adulto de confianza lo revisará pronto y tomará acción. Hiciste lo correcto.</div>
-      <button class="restart-btn" style="margin-top:1rem; background:var(--teal-400);" onclick="resetReport()">Enviar otro reporte</button>
+      <button class="restart-btn" style="margin-top:1rem;background:var(--teal-400)" onclick="resetReport()">Enviar otro reporte</button>
     </div>
   </div>
 
@@ -359,10 +396,7 @@
     </div>
     <div class="video-player" id="video-player">
       <div class="player-title" id="v-title"></div>
-      <div class="player-screen">
-        <div class="player-icon"><i class="ti ti-player-play"></i></div>
-        <div class="player-note">Aquí iría el video real embebido</div>
-      </div>
+      <div class="player-screen"><div class="player-icon"><i class="ti ti-player-play"></i></div><div class="player-note">Aquí iría el video real embebido</div></div>
       <div class="player-desc" id="v-desc"></div>
       <button class="back-btn" onclick="closeVideo()">← Volver a los videos</button>
     </div>
@@ -374,132 +408,245 @@
     <div class="sec-sub">Gana insignias completando actividades. ¡Conviértete en defensor del buen trato!</div>
     <div class="puntos-bar">
       <div class="puntos-num">120</div>
-      <div class="puntos-info">puntos acumulados<br><span style="font-size:12px;color:var(--purple-600);font-weight:600;">Nivel: Defensor en entrenamiento</span></div>
+      <div class="puntos-info">puntos acumulados<br><span style="font-size:12px;color:var(--purple-600);font-weight:600">Nivel: Defensor en entrenamiento</span></div>
     </div>
     <div class="logros-grid">
-      <div class="logro-card earned"><div class="logro-icon"><i class="ti ti-brain" style="color:var(--amber-600)"></i></div><div class="logro-name">Detector experto</div><div class="logro-desc">Completaste el quiz de bullying</div><div class="logro-lbl earned">¡Ganada! +30 pts</div></div>
-      <div class="logro-card earned"><div class="logro-icon"><i class="ti ti-map" style="color:var(--amber-600)"></i></div><div class="logro-name">Listo para actuar</div><div class="logro-desc">Leíste la guía completa</div><div class="logro-lbl earned">¡Ganada! +30 pts</div></div>
-      <div class="logro-card earned"><div class="logro-icon"><i class="ti ti-player-play" style="color:var(--amber-600)"></i></div><div class="logro-name">Aprendiz curioso</div><div class="logro-desc">Viste tu primer video</div><div class="logro-lbl earned">¡Ganada! +20 pts</div></div>
+      <div class="logro-card earned"><div class="logro-icon"><i class="ti ti-brain" style="color:var(--amber-600)"></i></div><div class="logro-name">Detector experto</div><div class="logro-desc">Completaste el quiz ¿Es bullying?</div><div class="logro-lbl earned">¡Ganada! +30 pts</div></div>
+      <div class="logro-card earned"><div class="logro-icon"><i class="ti ti-player-play" style="color:var(--amber-600)"></i></div><div class="logro-name">Decisor valiente</div><div class="logro-desc">Completaste el quiz ¿Qué harías?</div><div class="logro-lbl earned">¡Ganada! +30 pts</div></div>
+      <div class="logro-card earned"><div class="logro-icon"><i class="ti ti-map" style="color:var(--amber-600)"></i></div><div class="logro-name">Listo para actuar</div><div class="logro-desc">Leíste la guía completa</div><div class="logro-lbl earned">¡Ganada! +20 pts</div></div>
       <div class="logro-card earned"><div class="logro-icon"><i class="ti ti-message-report" style="color:var(--amber-600)"></i></div><div class="logro-name">Voz valiente</div><div class="logro-desc">Enviaste tu primer reporte</div><div class="logro-lbl earned">¡Ganada! +40 pts</div></div>
-      <div class="logro-card locked"><div class="logro-icon"><i class="ti ti-shield"></i></div><div class="logro-name">Guardián del recreo</div><div class="logro-desc">Completa el quiz con puntaje perfecto</div><div class="logro-lbl locked">Bloqueada</div></div>
+      <div class="logro-card locked"><div class="logro-icon"><i class="ti ti-shield"></i></div><div class="logro-name">Guardián del recreo</div><div class="logro-desc">Puntaje perfecto en ambos quizes</div><div class="logro-lbl locked">Bloqueada</div></div>
       <div class="logro-card locked"><div class="logro-icon"><i class="ti ti-star"></i></div><div class="logro-name">Embajador del buen trato</div><div class="logro-desc">Gana todas las insignias</div><div class="logro-lbl locked">Bloqueada</div></div>
     </div>
   </div>
-</div>
+
+</div><!-- .app -->
 
 <script>
-const questions = [
-  { scene: "Carlos empuja a Diego todos los días en el recreo y le quita su lonchera. Cuando Diego llora, Carlos se ríe y le dice que es un bebé.", illus: `<div class="char"><div class="avatar av-red">😠</div><div class="char-name">Carlos</div></div><div class="bubble">¡Dame eso, bebé llorón! Siempre te voy a quitar tu comida.</div><div class="char"><div class="avatar av-blue">😢</div><div class="char-name">Diego</div></div>`, answer: true, ok: "¡Muy bien! Esto SÍ es bullying. Carlos repite la agresión todos los días y Diego no puede defenderse solo.", fail: "Esto SÍ es bullying. Se repite todos los días, hay agresión física y verbal, y Diego no puede defenderse." },
-  { scene: "Lucía y Sofía pelearon porque Lucía usó los colores de Sofía sin pedirlos. Sofía se enojó y le dijo 'eres una egoísta'. No se hablaron en el recreo.", illus: `<div class="char"><div class="avatar av-yellow">😤</div><div class="char-name">Sofía</div></div><div class="bubble">¡Eres una egoísta! ¡Eran mis colores!</div><div class="char"><div class="avatar av-green">😠</div><div class="char-name">Lucía</div></div>`, answer: false, ok: "¡Correcto! Esto NO es bullying. Es un conflicto normal: pasó una vez y las dos se enojaron por igual.", fail: "Esto NO es bullying. Pasó solo una vez y las dos tienen el mismo poder. El bullying se repite y hay una víctima." },
-  { scene: "Un grupo creó un chat llamado 'Sin Miguel' y le mandan mensajes todos los días diciéndole que es feo y que nadie lo quiere. Miguel llora solo en casa.", illus: `<div class="char"><div class="avatar av-blue">😭</div><div class="char-name">Miguel</div></div><div class="bubble bubble-danger">"Eres feo" "Nadie te quiere" "Ojalá no vinieras al colegio" 📱</div>`, answer: true, ok: "¡Excelente! Esto SÍ es bullying. Se llama ciberbullying: ocurre por internet, se repite todos los días y es un grupo contra una sola persona.", fail: "Esto SÍ es bullying aunque sea por celular. Se llama ciberbullying: grupo contra Miguel, todos los días, y él no puede defenderse." },
-  { scene: "Ana ganó el concurso de dibujo. Valeria, aunque tenía celos, le dijo 'felicidades', pero luego le contó a otra amiga que 'Ana solo ganó por suerte'.", illus: `<div class="char"><div class="avatar av-green">🏆</div><div class="char-name">Ana</div></div><div class="bubble">¡Gané el concurso de dibujo!</div><div class="char"><div class="avatar av-yellow">😒</div><div class="char-name">Valeria</div></div>`, answer: false, ok: "¡Muy bien! Esto NO es bullying. Valeria hizo algo que no está bien, pero fue una vez y no hay una víctima indefensa.", fail: "Esto NO es bullying. Valeria hizo algo inapropiado pero fue puntual. El bullying tiene víctima clara y se repite." }
+/* ---- NAVEGACIÓN ---- */
+const pageMap = {home:0,quiz1:1,quiz2:2,guia:3,reporte:4,videos:5,logros:6};
+function goTo(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('page-'+page).classList.add('active');
+  document.querySelectorAll('.nav-tab')[pageMap[page]].classList.add('active');
+  window.scrollTo(0,0);
+}
+
+/* ---- QUIZ 1: ¿Esto es bullying? ---- */
+const q1Data = [
+  { scene:'Carlos empuja a Diego todos los días en el recreo y le quita su lonchera. Cuando Diego llora, Carlos se ríe y le dice que es un bebé.',
+    illus:`<div class="char"><div class="avatar av-red">😠</div><div class="char-name">Carlos</div></div><div class="bubble">¡Dame eso, bebé llorón! Siempre te voy a quitar tu comida.</div><div class="char"><div class="avatar av-blue">😢</div><div class="char-name">Diego</div></div>`,
+    answer:true,
+    ok:'¡Muy bien! Esto SÍ es bullying. Carlos repite la agresión todos los días y Diego no puede defenderse solo.',
+    fail:'Esto SÍ es bullying. Se repite todos los días, hay agresión física y verbal, y Diego no puede defenderse.' },
+  { scene:'Lucía y Sofía pelearon porque Lucía usó los colores de Sofía sin pedirlos. Sofía se enojó y le dijo "eres una egoísta". No se hablaron en el recreo.',
+    illus:`<div class="char"><div class="avatar av-yellow">😤</div><div class="char-name">Sofía</div></div><div class="bubble">¡Eres una egoísta! ¡Eran mis colores!</div><div class="char"><div class="avatar av-green">😠</div><div class="char-name">Lucía</div></div>`,
+    answer:false,
+    ok:'¡Correcto! Esto NO es bullying. Es un conflicto normal: pasó una vez y las dos se enojaron por igual.',
+    fail:'Esto NO es bullying. Pasó solo una vez y las dos tienen el mismo poder. El bullying se repite y hay una víctima.' },
+  { scene:'Un grupo creó un chat llamado "Sin Miguel" y le mandan mensajes todos los días diciéndole que es feo y que nadie lo quiere. Miguel llora solo en casa.',
+    illus:`<div class="char"><div class="avatar av-blue">😭</div><div class="char-name">Miguel</div></div><div class="bubble bubble-danger">"Eres feo" "Nadie te quiere" "Ojalá no vinieras al colegio" 📱</div>`,
+    answer:true,
+    ok:'¡Excelente! Esto SÍ es bullying. Se llama ciberbullying: ocurre por internet, se repite todos los días y es un grupo contra una sola persona.',
+    fail:'Esto SÍ es bullying aunque sea por celular. Se llama ciberbullying: grupo contra Miguel, todos los días, y él no puede defenderse.' },
+  { scene:'Ana ganó el concurso de dibujo. Valeria, aunque tenía celos, le dijo "felicidades", pero luego le contó a otra amiga que "Ana solo ganó por suerte".',
+    illus:`<div class="char"><div class="avatar av-green">🏆</div><div class="char-name">Ana</div></div><div class="bubble">¡Gané el concurso de dibujo!</div><div class="char"><div class="avatar av-yellow">😒</div><div class="char-name">Valeria</div></div>`,
+    answer:false,
+    ok:'¡Muy bien! Esto NO es bullying. Valeria hizo algo que no está bien, pero fue una vez y no hay una víctima indefensa.',
+    fail:'Esto NO es bullying. Valeria hizo algo inapropiado pero fue puntual. El bullying tiene víctima clara y se repite.' }
 ];
-const videos = [
-  { title: "¿Qué es el bullying?", desc: "El bullying es cuando alguien molesta, insulta o lastima a otra persona repetidamente. No es una pelea normal: siempre hay una víctima que no puede defenderse sola. Aprende a reconocerlo." },
-  { title: "El poder del testigo", desc: "¿Sabías que los testigos tienen más poder que el agresor? Cuando alguien observa y no hace nada, el agresor siente que tiene permiso. Pero si alguien actúa, todo cambia." },
-  { title: "Ciberbullying: ¿qué es?", desc: "El ciberbullying es el bullying que ocurre por internet, WhatsApp o redes sociales. Puede ser tan dañino como el bullying en persona porque no para cuando sales del colegio." },
-  { title: "Cómo pedir ayuda", desc: "Pedir ayuda no es de cobardes, es de valientes. Aprende cómo hablar con un adulto de confianza sobre el bullying y qué puedes decirle para que te tome en serio." },
-  { title: "Buen trato en el recreo", desc: "El recreo puede ser el mejor momento del día para todos. Aprende pequeñas acciones que hacen el recreo más seguro y divertido para ti y tus compañeros." },
-  { title: "Historia de un embajador", desc: "Conoce la historia de un niño que decidió actuar cuando vio bullying en su colegio. Sus pequeñas acciones cambiaron el ambiente de todo su salón." }
-];
-
-let qCur = 0, qScore = 0, qAnswered = false;
-
-function goTo(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('page-' + page).classList.add('active');
-  const map = { home:0, quiz:1, guia:2, reporte:3, videos:4, logros:5 };
-  document.querySelectorAll('.nav-tab')[map[page]].classList.add('active');
-  window.scrollTo(0, 0);
+let q1cur=0,q1score=0,q1answered=false;
+function q1Load(i){
+  q1answered=false;
+  const q=q1Data[i];
+  document.getElementById('q1-prog').style.width=`${((i+1)/q1Data.length)*100}%`;
+  document.getElementById('q1-lbl').textContent=`${i+1} de ${q1Data.length}`;
+  document.getElementById('q1-illus').innerHTML=q.illus;
+  document.getElementById('q1-txt').textContent=q.scene;
+  document.getElementById('q1-choices').innerHTML=`<button class="choice" onclick="q1Answer(true,this)">Sí, es bullying</button><button class="choice" onclick="q1Answer(false,this)">No es bullying</button>`;
+  const fb=document.getElementById('q1-feedback');
+  fb.className='feedback-box'; fb.innerHTML='';
+  document.getElementById('q1-next').className='next-btn';
 }
-
-function loadQ(i) {
-  qAnswered = false;
-  const q = questions[i];
-  document.getElementById('q-counter').textContent = `Situación ${i+1} de ${questions.length}`;
-  document.getElementById('q-prog').style.width = `${((i+1)/questions.length)*100}%`;
-  document.getElementById('q-illus').innerHTML = q.illus;
-  document.getElementById('q-txt').textContent = q.scene;
-  document.getElementById('q-choices').innerHTML = `<button class="choice" onclick="answerQ(true,this)">Sí, es bullying</button><button class="choice" onclick="answerQ(false,this)">No es bullying</button>`;
-  const fb = document.getElementById('q-feedback');
-  fb.className = 'feedback-box'; fb.textContent = '';
-  document.getElementById('q-next').className = 'next-btn';
+function q1Answer(choice,btn){
+  if(q1answered)return; q1answered=true;
+  const q=q1Data[q1cur]; const ok=choice===q.answer;
+  document.querySelectorAll('#q1-choices .choice').forEach(b=>{if(b.textContent.includes('Sí')===q.answer)b.classList.add('show-correct');});
+  btn.classList.add(ok?'correct':'wrong');
+  if(ok)q1score++;
+  const fb=document.getElementById('q1-feedback');
+  fb.className=`feedback-box show ${ok?'fb-good':'fb-bad'}`;
+  fb.innerHTML=`<div class="fb-title">${ok?'¡Correcto!':'Incorrecto'}</div>${ok?q.ok:q.fail}`;
+  document.getElementById('q1-next').className='next-btn show';
 }
-
-function answerQ(choice, btn) {
-  if (qAnswered) return;
-  qAnswered = true;
-  const q = questions[qCur];
-  const ok = choice === q.answer;
-  document.querySelectorAll('.choice').forEach(b => {
-    if (b.textContent.includes('Sí') === q.answer) b.classList.add('show-correct');
-  });
-  btn.classList.add(ok ? 'correct' : 'wrong');
-  if (ok) qScore++;
-  const fb = document.getElementById('q-feedback');
-  fb.className = `feedback-box show ${ok ? 'fb-good' : 'fb-bad'}`;
-  fb.textContent = ok ? q.ok : q.fail;
-  document.getElementById('q-next').className = 'next-btn show';
-}
-
-document.getElementById('q-next').addEventListener('click', () => {
-  qCur++;
-  if (qCur < questions.length) {
-    loadQ(qCur);
-  } else {
-    document.getElementById('quiz-area').style.display = 'none';
-    const sc = document.getElementById('q-score');
-    sc.className = 'score-wrap show';
-    document.getElementById('q-stars').textContent = qScore >= 4 ? '⭐⭐⭐' : qScore >= 3 ? '⭐⭐' : '⭐';
-    document.getElementById('q-score-num').textContent = `${qScore}/${questions.length}`;
-    const msgs = [
-      { l: 'Sigue practicando', m: 'Lo más importante es saber las 3 claves del bullying: se repite, hay una víctima y hay desequilibrio de poder.' },
-      { l: 'Sigue practicando', m: 'Vas por buen camino. Recuerda: no todo conflicto es bullying. El bullying se repite y hay una víctima que no puede defenderse.' },
-      { l: '¡Muy bien!', m: '¡Casi perfecto! Ya sabes distinguir el bullying de un conflicto normal. Eso te ayudará a actuar cuando lo necesites.' },
-      { l: '¡Eres un experto!', m: '¡Increíble! Identificas el bullying perfectamente. Ahora puedes ayudar a tus amigos a reconocerlo también. ¡Eres un defensor del buen trato!' }
+document.getElementById('q1-next').addEventListener('click',()=>{
+  q1cur++;
+  if(q1cur<q1Data.length){q1Load(q1cur);}
+  else{
+    document.getElementById('q1-area').style.display='none';
+    const sc=document.getElementById('q1-score'); sc.className='score-wrap show';
+    document.getElementById('q1-stars').textContent=q1score>=4?'⭐⭐⭐':q1score>=3?'⭐⭐':'⭐';
+    document.getElementById('q1-score-num').textContent=`${q1score}/${q1Data.length}`;
+    const msgs=[
+      {l:'Sigue practicando',m:'Recuerda las 3 claves: el bullying se repite, hay una víctima y hay desequilibrio de poder.'},
+      {l:'Sigue practicando',m:'Vas por buen camino. No todo conflicto es bullying: el bullying se repite y hay una víctima que no puede defenderse.'},
+      {l:'¡Muy bien!',m:'Ya sabes distinguir el bullying de un conflicto normal. ¡Eso es muy importante para poder actuar!'},
+      {l:'¡Eres un experto!',m:'¡Puntaje perfecto! Identificas el bullying perfectamente. Ahora puedes ayudar a tus amigos a reconocerlo también.'}
     ];
-    document.getElementById('q-score-lbl').textContent = msgs[qScore].l;
-    document.getElementById('q-score-msg').textContent = msgs[qScore].m;
+    document.getElementById('q1-score-lbl').textContent=msgs[q1score].l;
+    document.getElementById('q1-score-msg').textContent=msgs[q1score].m;
   }
 });
+function q1Restart(){q1cur=0;q1score=0;q1answered=false;document.getElementById('q1-area').style.display='block';document.getElementById('q1-score').className='score-wrap';q1Load(0);}
+q1Load(0);
 
-function quizRestart() {
-  qCur = 0; qScore = 0; qAnswered = false;
-  document.getElementById('quiz-area').style.display = 'block';
-  document.getElementById('q-score').className = 'score-wrap';
-  loadQ(0);
+/* ---- QUIZ 2: ¿Qué harías tú? ---- */
+const q2Data = [
+  { emoji:'😟', place:'En el recreo',
+    scene:'Estás jugando fútbol en el recreo y ves que un grupo de niños le quita la pelota a Tomás, lo empujan y se burlan de él diciéndole que es malo jugando. Tomás se queda solo y con cara de querer llorar.',
+    question:'¿Qué harías tú en ese momento?',
+    options:[
+      {text:'Te ríes con el grupo porque no quieres quedar mal con ellos.',correct:false},
+      {text:'Te haces el que no vio nada y sigues jugando por tu lado.',correct:false},
+      {text:'Te acercas a Tomás, le dices "oye, ven juega con nosotros" y lo invitas a tu grupo.',correct:true},
+      {text:'Le gritas al grupo que paren, aunque eso podría meterte en problemas.',correct:false}
+    ],
+    ok:'¡Excelente! Invitar a Tomás a tu grupo lo saca de la situación sin confrontar al agresor. Así lo proteges sin ponerte en riesgo y él siente que no está solo.',
+    fail:'La mejor opción era acercarte a Tomás e invitarlo a tu grupo. Así lo sacas de la situación sin confrontar al agresor, y él siente que alguien lo apoya.' },
+  { emoji:'📱', place:'Por WhatsApp',
+    scene:'Tu amiga Valeria te muestra su celular llorando: hay un grupo de WhatsApp llamado "Sin Valeria" donde varios compañeros mandan memes burlándose de su ropa y su forma de hablar. Le dicen que nadie la quiere.',
+    question:'¿Cuál es la mejor forma de ayudar a Valeria?',
+    options:[
+      {text:'Le dices que no le haga caso, que son unos tontos y ya pasará.',correct:false},
+      {text:'La escuchas, le dices que no está sola y juntos se lo cuentan a un adulto de confianza hoy mismo.',correct:true},
+      {text:'Entras al grupo y escribes que lo que hacen está mal.',correct:false},
+      {text:'Le dices que elimine WhatsApp para que no lo vea más.',correct:false}
+    ],
+    ok:'¡Muy bien! Escucharla y acompañarla a contárselo a un adulto es lo más efectivo. El ciberbullying necesita intervención de adultos.',
+    fail:'Lo más efectivo era escucharla y acompañarla a contárselo a un adulto hoy mismo. El ciberbullying no para solo: necesita que un adulto intervenga.' },
+  { emoji:'🍱', place:'En el comedor',
+    scene:'Cada día a la hora del almuerzo, ves que Diego come solo porque un grupo le dice a todos que no se sienten con él. Hoy vuelve a pasar: Diego busca sitio con la bandeja y todos le voltean la cara.',
+    question:'¿Qué es lo más valiente y útil que puedes hacer?',
+    options:[
+      {text:'Te sientas con Diego y le haces conversación como si fuera lo más normal del mundo.',correct:true},
+      {text:'Le preguntas al profesor de turno si puede cambiar los sitios de todos.',correct:false},
+      {text:'Esperas a que termine el almuerzo y luego le preguntas si está bien.',correct:false},
+      {text:'No haces nada porque si te juntas con él, te pueden hacer lo mismo a ti.',correct:false}
+    ],
+    ok:'¡Perfecto! Sentarte con Diego en ese momento es exactamente lo que necesita. No necesitas decir nada especial, solo estar ahí. Eso rompe el patrón de exclusión.',
+    fail:'La respuesta más poderosa era simplemente sentarte con Diego en ese momento. Actuar en el instante vale más que cualquier conversación después.' },
+  { emoji:'😰', place:'En el salón',
+    scene:'Tu compañero Luis te confiesa en secreto que un niño más grande lo amenaza todos los días a la salida. Le dice que si le cuenta a alguien, las cosas se pondrán peor. Luis tiene miedo y te pide que guardes el secreto.',
+    question:'¿Qué le dices a Luis?',
+    options:[
+      {text:'Guardas el secreto porque te lo pidió y no quieres traicionarlo.',correct:false},
+      {text:'Lo convences de que juntos le cuenten a un adulto de confianza, explicándole que eso es lo único que realmente lo va a proteger.',correct:true},
+      {text:'Le dices que enfrente al niño mayor y que no le tenga miedo.',correct:false},
+      {text:'Le cuentas tú solo al profesor sin avisar a Luis.',correct:false}
+    ],
+    ok:'¡Exactamente! El secreto protege al agresor, no a Luis. Ir juntos a un adulto hace que Luis no se sienta solo y el adulto pueda actuar bien.',
+    fail:'Lo correcto era convencerlo de ir juntos a un adulto. Guardar el secreto solo protege al agresor. Los adultos de confianza son los únicos que pueden poner fin a las amenazas.' },
+  { emoji:'😢', place:'En educación física',
+    scene:'En la clase de educación física forman equipos y nadie quiere a Andrea. Cuando el profesor pregunta quién la recibe, todos miran para otro lado. Andrea se queda de pie, roja de vergüenza.',
+    question:'¿Cuál es la mejor respuesta en ese momento?',
+    options:[
+      {text:'Esperas que el profesor lo resuelva, él es el adulto y es su responsabilidad.',correct:false},
+      {text:'Le dices en voz alta al profesor que tú no la quieres tampoco para no quedar mal.',correct:false},
+      {text:'Levantas la mano y dices "Andrea puede estar en mi equipo" antes de que el silencio se haga más largo.',correct:true},
+      {text:'Después de clase le dices a Andrea en privado que lo sientes mucho.',correct:false}
+    ],
+    ok:'¡Eso es ser un verdadero defensor del buen trato! Actuar en el momento, en público, es lo que más importa. Una sola voz valiente puede cambiar todo el ambiente.',
+    fail:'La respuesta más poderosa era levantar la mano en ese momento. Actuar en el instante, en público, rompe el silencio cómplice. Una sola voz valiente cambia todo.' }
+];
+let q2cur=0,q2score=0,q2answered=false;
+const letters=['A','B','C','D'];
+function q2Load(i){
+  q2answered=false;
+  const q=q2Data[i];
+  document.getElementById('q2-prog').style.width=`${((i+1)/q2Data.length)*100}%`;
+  document.getElementById('q2-lbl').textContent=`${i+1} de ${q2Data.length}`;
+  document.getElementById('q2-emoji').textContent=q.emoji;
+  document.getElementById('q2-place').textContent=q.place;
+  document.getElementById('q2-txt').textContent=q.scene;
+  document.getElementById('q2-qlbl').textContent=q.question;
+  document.getElementById('q2-options').innerHTML=q.options.map((o,idx)=>`
+    <button class="opt-btn" onclick="q2Answer(${idx},this)">
+      <span class="opt-letter">${letters[idx]}</span>
+      <span class="opt-text">${o.text}</span>
+    </button>`).join('');
+  const fb=document.getElementById('q2-feedback');
+  fb.className='feedback-box'; fb.innerHTML='';
+  document.getElementById('q2-next').className='next-btn';
 }
-
-function submitReport() {
-  if (!document.getElementById('r-lugar').value || !document.getElementById('r-desc').value.trim()) {
-    alert('Por favor completa al menos el lugar y la descripción.');
-    return;
+function q2Answer(idx,btn){
+  if(q2answered)return; q2answered=true;
+  const q=q2Data[q2cur]; const ok=q.options[idx].correct;
+  document.querySelectorAll('#q2-options .opt-btn').forEach((b,i)=>{
+    b.disabled=true;
+    if(q.options[i].correct && i!==idx) b.classList.add('reveal');
+  });
+  btn.classList.add(ok?'correct':'wrong');
+  if(ok)q2score++;
+  const fb=document.getElementById('q2-feedback');
+  fb.className=`feedback-box show ${ok?'fb-good':'fb-bad'}`;
+  fb.innerHTML=`<div class="fb-title">${ok?'¡Correcto!':'No era esa...'}</div>${ok?q.ok:q.fail}`;
+  document.getElementById('q2-next').className='next-btn show';
+}
+document.getElementById('q2-next').addEventListener('click',()=>{
+  q2cur++;
+  if(q2cur<q2Data.length){q2Load(q2cur);}
+  else{
+    document.getElementById('q2-area').style.display='none';
+    const sc=document.getElementById('q2-score'); sc.className='score-wrap show';
+    document.getElementById('q2-stars').textContent=q2score>=5?'🥇🥇🥇':q2score>=4?'🥇🥇':q2score>=3?'🥇':'🎯';
+    document.getElementById('q2-score-num').textContent=`${q2score}/${q2Data.length}`;
+    const msgs=[
+      {l:'Sigue practicando',m:'Recuerda: actúa en el momento, acompaña a la víctima y avisa a un adulto de confianza. ¡Inténtalo de nuevo!'},
+      {l:'Sigue practicando',m:'Vas por buen camino. La mejor respuesta casi siempre es acompañar a quien está siendo víctima y avisar a un adulto.'},
+      {l:'¡Muy bien!',m:'Ya sabes cómo actuar en la mayoría de situaciones. Con práctica, cada vez te será más fácil reaccionar bien.'},
+      {l:'¡Genial!',m:'Casi perfecto. Eres alguien en quien tus compañeros pueden confiar. Saber actuar ante el bullying es muy valioso.'},
+      {l:'¡Eres un defensor del buen trato!',m:'¡Puntaje perfecto! Sabes exactamente cómo actuar en cada situación. Tus compañeros tienen suerte de tenerte.'}
+    ];
+    document.getElementById('q2-score-lbl').textContent=msgs[q2score].l;
+    document.getElementById('q2-score-msg').textContent=msgs[q2score].m;
   }
-  document.getElementById('form-area').style.display = 'none';
-  document.getElementById('r-success').className = 'success-msg show';
+});
+function q2Restart(){q2cur=0;q2score=0;q2answered=false;document.getElementById('q2-area').style.display='block';document.getElementById('q2-score').className='score-wrap';q2Load(0);}
+q2Load(0);
+
+/* ---- REPORTE ---- */
+function submitReport(){
+  if(!document.getElementById('r-lugar').value||!document.getElementById('r-desc').value.trim()){alert('Por favor completa al menos el lugar y la descripción.');return;}
+  document.getElementById('form-area').style.display='none';
+  document.getElementById('r-success').className='success-msg show';
+}
+function resetReport(){
+  ['r-lugar','r-tipo','r-frecuencia'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('r-desc').value='';
+  document.getElementById('form-area').style.display='block';
+  document.getElementById('r-success').className='success-msg';
 }
 
-function resetReport() {
-  ['r-lugar','r-tipo','r-frecuencia'].forEach(id => document.getElementById(id).value = '');
-  document.getElementById('r-desc').value = '';
-  document.getElementById('form-area').style.display = 'block';
-  document.getElementById('r-success').className = 'success-msg';
+/* ---- VIDEOS ---- */
+const videos=[
+  {title:'¿Qué es el bullying?',desc:'El bullying es cuando alguien molesta, insulta o lastima a otra persona repetidamente. No es una pelea normal: siempre hay una víctima que no puede defenderse sola. Aprende a reconocerlo.'},
+  {title:'El poder del testigo',desc:'¿Sabías que los testigos tienen más poder que el agresor? Cuando alguien observa y no hace nada, el agresor siente que tiene permiso. Pero si alguien actúa, todo cambia.'},
+  {title:'Ciberbullying: ¿qué es?',desc:'El ciberbullying es el bullying que ocurre por internet, WhatsApp o redes sociales. Puede ser tan dañino como el bullying en persona porque no para cuando sales del colegio.'},
+  {title:'Cómo pedir ayuda',desc:'Pedir ayuda no es de cobardes, es de valientes. Aprende cómo hablar con un adulto de confianza sobre el bullying y qué puedes decirle para que te tome en serio.'},
+  {title:'Buen trato en el recreo',desc:'El recreo puede ser el mejor momento del día para todos. Aprende pequeñas acciones que hacen el recreo más seguro y divertido para ti y tus compañeros.'},
+  {title:'Historia de un embajador',desc:'Conoce la historia de un niño que decidió actuar cuando vio bullying en su colegio. Sus pequeñas acciones cambiaron el ambiente de todo su salón.'}
+];
+function playVideo(i){
+  document.getElementById('videos-grid').style.display='none';
+  document.getElementById('video-player').className='video-player show';
+  document.getElementById('v-title').textContent=videos[i].title;
+  document.getElementById('v-desc').textContent=videos[i].desc;
 }
-
-function playVideo(i) {
-  document.getElementById('videos-grid').style.display = 'none';
-  document.getElementById('video-player').className = 'video-player show';
-  document.getElementById('v-title').textContent = videos[i].title;
-  document.getElementById('v-desc').textContent = videos[i].desc;
+function closeVideo(){
+  document.getElementById('videos-grid').style.display='grid';
+  document.getElementById('video-player').className='video-player';
 }
-
-function closeVideo() {
-  document.getElementById('videos-grid').style.display = 'grid';
-  document.getElementById('video-player').className = 'video-player';
-}
-
-loadQ(0);
 </script>
 </body>
 </html>
