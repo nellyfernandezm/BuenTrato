@@ -21,115 +21,65 @@
     }
     body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
     .app{max-width:780px;margin:0 auto;padding:1rem 1rem 3rem;}
-
-    /* ANIMATIONS */
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
     @keyframes pop{0%{transform:scale(0.8);opacity:0}100%{transform:scale(1);opacity:1}}
-    @keyframes wiggle{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
     @keyframes fadeUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
     .float{animation:float 3s ease-in-out infinite;}
     .pop{animation:pop 0.4s cubic-bezier(.175,.885,.32,1.275) both;}
-    .fade-up{animation:fadeUp 0.5s ease both;}
-
-    /* NAV */
-    .nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;
-      padding:0.75rem 1.25rem;background:var(--surface);border-radius:var(--radius-xl);
-      margin-bottom:1.5rem;box-shadow:0 4px 20px rgba(108,99,255,0.1);}
-    .nav-logo{font-size:18px;font-weight:900;color:var(--purple);display:flex;align-items:center;gap:8px;letter-spacing:-0.5px;}
+    .nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:0.75rem 1.25rem;background:var(--surface);border-radius:var(--radius-xl);margin-bottom:1.5rem;box-shadow:0 4px 20px rgba(108,99,255,0.1);}
+    .nav-logo{font-size:18px;font-weight:900;color:var(--purple);display:flex;align-items:center;gap:8px;}
     .nav-logo-dot{width:10px;height:10px;border-radius:50%;background:var(--teal);display:inline-block;}
     .nav-tabs{display:flex;gap:4px;flex-wrap:wrap;}
-    .nav-tab{padding:6px 12px;border-radius:99px;font-size:12px;cursor:pointer;border:none;
-      color:var(--text-muted);background:transparent;transition:all 0.2s;font-family:'Nunito',sans-serif;font-weight:700;display:flex;align-items:center;gap:4px;}
+    .nav-tab{padding:6px 12px;border-radius:99px;font-size:12px;cursor:pointer;border:none;color:var(--text-muted);background:transparent;transition:all 0.2s;font-family:'Nunito',sans-serif;font-weight:700;display:flex;align-items:center;gap:4px;}
     .nav-tab:hover{background:var(--purple-light);color:var(--purple);}
     .nav-tab.active{background:var(--purple);color:white;}
-
-    .page{display:none;}
-    .page.active{display:block;}
-
-    /* HERO */
-    .hero{background:linear-gradient(135deg,#6C63FF 0%,#8B80FF 100%);border-radius:var(--radius-xl);
-      padding:2rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1.5rem;position:relative;overflow:hidden;}
-    .hero::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;
-      border-radius:50%;background:rgba(255,255,255,0.08);}
-    .hero::after{content:'';position:absolute;bottom:-30px;right:60px;width:100px;height:100px;
-      border-radius:50%;background:rgba(255,255,255,0.06);}
+    .page{display:none;} .page.active{display:block;}
+    .hero{background:linear-gradient(135deg,#6C63FF 0%,#8B80FF 100%);border-radius:var(--radius-xl);padding:2rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1.5rem;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,0.08);}
     .hero-illo{font-size:72px;flex-shrink:0;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.15));z-index:1;}
     .hero-content{z-index:1;}
     .hero-title{font-size:26px;font-weight:900;color:white;line-height:1.2;margin-bottom:6px;}
     .hero-sub{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.6;}
-    .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.2);
-      border-radius:99px;padding:4px 12px;font-size:12px;color:white;font-weight:700;margin-top:10px;}
-
-    /* HOME CARDS */
+    .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.2);border-radius:99px;padding:4px 12px;font-size:12px;color:white;font-weight:700;margin-top:10px;}
     .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;}
-    .home-card{background:var(--surface);border-radius:var(--radius-lg);padding:1.25rem;cursor:pointer;
-      transition:all 0.25s;border:2px solid transparent;position:relative;overflow:hidden;}
+    .home-card{background:var(--surface);border-radius:var(--radius-lg);padding:1.25rem;cursor:pointer;transition:all 0.25s;position:relative;overflow:hidden;}
     .home-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:var(--radius-lg) var(--radius-lg) 0 0;}
     .home-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(108,99,255,0.15);}
-    .card-purple::before{background:var(--purple);}
-    .card-teal::before{background:var(--teal);}
-    .card-coral::before{background:var(--coral);}
-    .card-amber::before{background:var(--amber);}
-    .card-blue::before{background:var(--blue);}
-    .card-green::before{background:var(--green);}
+    .card-purple::before{background:var(--purple);} .card-teal::before{background:var(--teal);} .card-coral::before{background:var(--coral);} .card-amber::before{background:var(--amber);} .card-blue::before{background:var(--blue);} .card-green::before{background:var(--green);}
     .card-illo{font-size:40px;margin-bottom:10px;display:block;}
     .card-title{font-size:14px;font-weight:800;color:var(--text);margin-bottom:4px;}
     .card-desc{font-size:12px;color:var(--text-muted);line-height:1.4;margin-bottom:8px;}
     .card-tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;}
-    .tag-purple{background:var(--purple-light);color:var(--purple);}
-    .tag-teal{background:var(--teal-light);color:#00897B;}
-    .tag-coral{background:var(--coral-light);color:#E53935;}
-    .tag-amber{background:var(--amber-light);color:#F57F17;}
-    .tag-blue{background:var(--blue-light);color:#00796B;}
-    .tag-green{background:var(--green-light);color:#2E7D32;}
-
-    /* SECTION HEADER */
+    .tag-purple{background:var(--purple-light);color:var(--purple);} .tag-teal{background:var(--teal-light);color:#00897B;} .tag-coral{background:var(--coral-light);color:#E53935;} .tag-amber{background:var(--amber-light);color:#F57F17;} .tag-blue{background:var(--blue-light);color:#00796B;} .tag-green{background:var(--green-light);color:#2E7D32;}
     .sec-header{display:flex;align-items:center;gap:12px;margin-bottom:0.5rem;}
     .sec-icon-circle{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
-    .sic-purple{background:var(--purple-light);}
-    .sic-coral{background:var(--coral-light);}
-    .sic-teal{background:var(--teal-light);}
-    .sic-amber{background:var(--amber-light);}
-    .sic-blue{background:var(--blue-light);}
+    .sic-purple{background:var(--purple-light);} .sic-coral{background:var(--coral-light);} .sic-teal{background:var(--teal-light);} .sic-amber{background:var(--amber-light);} .sic-blue{background:var(--blue-light);}
     .sec-title{font-size:22px;font-weight:900;color:var(--text);}
     .sec-sub{font-size:14px;color:var(--text-muted);margin-bottom:1.25rem;line-height:1.6;margin-left:56px;}
-
-    /* PROGRESS */
     .prog-row{display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
     .prog-track{flex:1;background:#EBEBFF;border-radius:99px;height:10px;}
     .prog-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--purple),#8B80FF);transition:width 0.5s cubic-bezier(.4,0,.2,1);}
     .prog-lbl{font-size:12px;font-weight:700;color:var(--purple);white-space:nowrap;}
-
-    /* SCENE CARD */
     .scene-card{background:var(--surface);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:1rem;box-shadow:0 4px 16px rgba(108,99,255,0.08);}
     .scene-illus{background:var(--purple-light);border-radius:var(--radius);padding:1rem;margin-bottom:1rem;display:flex;align-items:center;gap:12px;min-height:80px;}
     .avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
-    .av-blue{background:#DBEAFE;} .av-red{background:#FEE2E2;} .av-yellow{background:#FEF3C7;} .av-green{background:#D1FAE5;}
+    .av-blue{background:#DBEAFE;} .av-red{background:#FEE2E2;} .av-yellow{background:#FEF3C7;} .av-green{background:#D1FAE5;} .av-pink{background:#FCE7F3;} .av-orange{background:#FFEDD5;}
     .char{display:flex;flex-direction:column;align-items:center;gap:3px;flex-shrink:0;}
     .char-name{font-size:10px;color:var(--purple);font-weight:800;}
     .bubble{background:white;border:2px solid var(--purple-light);border-radius:14px;padding:8px 14px;font-size:13px;flex:1;line-height:1.5;font-weight:600;}
     .bubble-danger{background:#FFF0F0;border-color:#FFD0D0;}
     .scene-txt{font-size:14px;line-height:1.7;color:var(--text);font-weight:600;}
     .q-label{font-size:13px;font-weight:800;color:var(--text-muted);margin-bottom:0.6rem;text-transform:uppercase;letter-spacing:0.5px;}
-
-    /* QUIZ 1 CHOICES */
     .choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-    .choice{padding:1rem;border:2.5px solid #EBEBFF;border-radius:var(--radius);background:var(--surface);
-      cursor:pointer;font-size:14px;font-family:'Nunito',sans-serif;font-weight:700;transition:all 0.2s;color:var(--text);}
+    .choice{padding:1rem;border:2.5px solid #EBEBFF;border-radius:var(--radius);background:var(--surface);cursor:pointer;font-size:14px;font-family:'Nunito',sans-serif;font-weight:700;transition:all 0.2s;color:var(--text);}
     .choice:hover{background:var(--purple-light);border-color:var(--purple);transform:scale(1.02);}
     .choice.correct{background:#EBFBEE;border-color:var(--green);color:#2E7D32;}
     .choice.wrong{background:#FFF0F0;border-color:var(--coral);color:#C62828;}
     .choice.show-correct{background:#EBFBEE;border-color:var(--green);color:#2E7D32;}
-
-    /* QUIZ 2 OPTIONS */
     .options-list{display:flex;flex-direction:column;gap:10px;margin-bottom:1rem;}
-    .opt-btn{display:flex;align-items:flex-start;gap:12px;padding:1rem 1.1rem;
-      border:2.5px solid #EBEBFF;border-radius:var(--radius);background:var(--surface);
-      cursor:pointer;font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;
-      color:var(--text);text-align:left;transition:all 0.2s;width:100%;line-height:1.5;}
+    .opt-btn{display:flex;align-items:flex-start;gap:12px;padding:1rem 1.1rem;border:2.5px solid #EBEBFF;border-radius:var(--radius);background:var(--surface);cursor:pointer;font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;color:var(--text);text-align:left;transition:all 0.2s;width:100%;line-height:1.5;}
     .opt-btn:hover:not(:disabled){background:var(--purple-light);border-color:var(--purple);transform:translateX(4px);}
-    .opt-letter{width:28px;height:28px;border-radius:50%;background:var(--purple-light);color:var(--purple);
-      display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;}
+    .opt-letter{width:28px;height:28px;border-radius:50%;background:var(--purple-light);color:var(--purple);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;}
     .opt-btn.correct{background:#EBFBEE;border-color:var(--green);}
     .opt-btn.correct .opt-letter{background:var(--green);color:white;}
     .opt-btn.correct .opt-text{color:#2E7D32;}
@@ -139,40 +89,25 @@
     .opt-btn.reveal{background:#EBFBEE;border-color:var(--green);opacity:0.7;}
     .opt-btn.reveal .opt-letter{background:var(--green);color:white;}
     .opt-btn.reveal .opt-text{color:#2E7D32;}
-
-    /* SCENE HEADER (quiz2) */
     .scene-header{display:flex;align-items:center;gap:12px;margin-bottom:1rem;padding-bottom:0.85rem;border-bottom:2px solid var(--purple-light);}
     .scene-emoji{width:52px;height:52px;border-radius:16px;background:var(--purple-light);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
     .scene-place{font-size:12px;color:var(--purple);font-weight:800;background:var(--purple-light);padding:4px 12px;border-radius:99px;}
-
-    /* FEEDBACK */
     .feedback-box{border-radius:var(--radius);padding:1rem;margin-top:0.85rem;font-size:13px;line-height:1.6;display:none;font-weight:600;}
     .feedback-box.show{display:block;animation:pop 0.3s cubic-bezier(.175,.885,.32,1.275) both;}
     .fb-good{background:#EBFBEE;border:2px solid var(--green);color:#2E7D32;}
     .fb-bad{background:#FFF0F0;border:2px solid var(--coral);color:#C62828;}
     .fb-title{font-weight:900;margin-bottom:4px;font-size:15px;}
-
-    /* NEXT BTN */
-    .next-btn{width:100%;margin-top:0.85rem;padding:0.85rem;border-radius:var(--radius);
-      background:linear-gradient(135deg,var(--purple),#8B80FF);color:white;border:none;
-      cursor:pointer;font-size:15px;font-weight:800;font-family:'Nunito',sans-serif;display:none;
-      transition:all 0.2s;letter-spacing:0.3px;}
+    .next-btn{width:100%;margin-top:0.85rem;padding:0.85rem;border-radius:var(--radius);background:linear-gradient(135deg,var(--purple),#8B80FF);color:white;border:none;cursor:pointer;font-size:15px;font-weight:800;font-family:'Nunito',sans-serif;display:none;transition:all 0.2s;}
     .next-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(108,99,255,0.35);}
     .next-btn.show{display:block;animation:fadeUp 0.3s ease both;}
-
-    /* SCORE */
     .score-wrap{background:var(--surface);border-radius:var(--radius-xl);padding:2.5rem 2rem;text-align:center;display:none;box-shadow:0 8px 32px rgba(108,99,255,0.12);}
     .score-wrap.show{display:block;animation:pop 0.4s cubic-bezier(.175,.885,.32,1.275) both;}
     .score-illo{font-size:64px;margin-bottom:0.5rem;display:block;}
     .score-big{font-size:52px;font-weight:900;color:var(--purple);}
     .score-lbl{font-size:16px;color:var(--text-muted);font-weight:700;margin:4px 0 1rem;}
     .score-msg{font-size:14px;background:var(--purple-light);border-radius:var(--radius);padding:1rem;line-height:1.7;color:var(--purple-dark);margin-bottom:1.25rem;font-weight:600;}
-    .restart-btn{padding:0.75rem 2rem;background:linear-gradient(135deg,var(--purple),#8B80FF);color:white;
-      border:none;border-radius:99px;cursor:pointer;font-size:15px;font-family:'Nunito',sans-serif;font-weight:800;
-      transition:all 0.2s;}
+    .restart-btn{padding:0.75rem 2rem;background:linear-gradient(135deg,var(--purple),#8B80FF);color:white;border:none;border-radius:99px;cursor:pointer;font-size:15px;font-family:'Nunito',sans-serif;font-weight:800;transition:all 0.2s;}
     .restart-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(108,99,255,0.35);}
-
-    /* GUIA */
     .steps-list{display:flex;flex-direction:column;gap:12px;margin-bottom:1.25rem;}
     .step-item{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border-radius:var(--radius-lg);padding:1.1rem;box-shadow:0 2px 12px rgba(108,99,255,0.07);transition:transform 0.2s;}
     .step-item:hover{transform:translateX(4px);}
@@ -181,8 +116,6 @@
     .step-desc{font-size:13px;color:var(--text-muted);line-height:1.5;font-weight:600;}
     .step-illo{font-size:24px;flex-shrink:0;}
     .tip-box{background:var(--teal-light);border-radius:var(--radius);padding:1rem;font-size:13px;color:#00695C;line-height:1.6;display:flex;gap:10px;align-items:flex-start;font-weight:700;border-left:4px solid var(--teal);}
-
-    /* REPORTE */
     .anon-badge{display:inline-flex;align-items:center;gap:8px;background:var(--teal-light);color:#00695C;border-radius:99px;padding:8px 16px;font-size:13px;margin-bottom:1rem;font-weight:700;}
     .form-group{margin-bottom:1rem;}
     .form-label{font-size:13px;font-weight:800;color:var(--text);margin-bottom:6px;display:block;}
@@ -196,18 +129,11 @@
     .success-illo{font-size:64px;display:block;margin-bottom:0.5rem;}
     .success-title{font-size:22px;font-weight:900;color:#2E7D32;margin-bottom:8px;}
     .success-sub{font-size:14px;color:#388E3C;line-height:1.6;font-weight:600;}
-
-    /* VIDEOS */
     .videos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:1.25rem;}
     .video-card{background:var(--surface);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;transition:all 0.25s;box-shadow:0 2px 12px rgba(108,99,255,0.07);}
     .video-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(108,99,255,0.15);}
     .video-thumb{height:100px;display:flex;align-items:center;justify-content:center;font-size:36px;position:relative;}
-    .vt-purple{background:linear-gradient(135deg,#6C63FF,#8B80FF);}
-    .vt-teal{background:linear-gradient(135deg,#00C9A7,#00E5C5);}
-    .vt-coral{background:linear-gradient(135deg,#FF6B6B,#FF8E8E);}
-    .vt-amber{background:linear-gradient(135deg,#FFB703,#FFCF40);}
-    .vt-blue{background:linear-gradient(135deg,#4ECDC4,#6EE7DF);}
-    .vt-green{background:linear-gradient(135deg,#51CF66,#74DD80);}
+    .vt-purple{background:linear-gradient(135deg,#6C63FF,#8B80FF);} .vt-teal{background:linear-gradient(135deg,#00C9A7,#00E5C5);} .vt-coral{background:linear-gradient(135deg,#FF6B6B,#FF8E8E);} .vt-amber{background:linear-gradient(135deg,#FFB703,#FFCF40);} .vt-blue{background:linear-gradient(135deg,#4ECDC4,#6EE7DF);} .vt-green{background:linear-gradient(135deg,#51CF66,#74DD80);}
     .play-badge{position:absolute;bottom:8px;right:8px;background:rgba(255,255,255,0.9);border-radius:99px;padding:3px 10px;font-size:11px;font-weight:800;color:var(--purple);}
     .video-info{padding:0.85rem;}
     .video-title{font-size:13px;font-weight:800;color:var(--text);margin-bottom:3px;}
@@ -220,8 +146,6 @@
     .player-note{font-size:12px;color:rgba(255,255,255,0.7);font-weight:600;}
     .player-desc{font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:0.85rem;font-weight:600;}
     .back-btn{font-size:13px;color:var(--purple);cursor:pointer;background:none;border:none;font-family:'Nunito',sans-serif;font-weight:800;}
-
-    /* LOGROS */
     .puntos-bar{background:linear-gradient(135deg,var(--purple),#8B80FF);border-radius:var(--radius-lg);padding:1.25rem;display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;}
     .puntos-illo{font-size:40px;}
     .puntos-num{font-size:36px;font-weight:900;color:white;}
@@ -236,29 +160,21 @@
     .logro-name{font-size:13px;font-weight:800;color:var(--text);margin-bottom:4px;}
     .logro-desc{font-size:11px;color:var(--text-muted);line-height:1.4;font-weight:600;}
     .logro-lbl{font-size:11px;font-weight:800;margin-top:6px;display:block;}
-    .logro-lbl.earned{color:#F57F17;}
-    .logro-lbl.locked{color:#BDBDBD;}
-
-    /* ILLUSTRATIONS (SVG inline) */
-    .illo-section{display:flex;justify-content:center;margin-bottom:1rem;}
-
+    .logro-lbl.earned{color:#F57F17;} .logro-lbl.locked{color:#BDBDBD;}
     @media(max-width:500px){
       .nav{flex-direction:column;align-items:flex-start;}
       .nav-tabs{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px;}
       .hero{flex-direction:column;text-align:center;} .hero-illo{font-size:52px;}
-      .choices{grid-template-columns:1fr;}
-      .hero-title{font-size:20px;}
+      .choices{grid-template-columns:1fr;} .hero-title{font-size:20px;}
     }
   </style>
 </head>
 <body>
 <div class="app">
-
-  <!-- NAV -->
   <nav class="nav">
     <div class="nav-logo"><span class="nav-logo-dot"></span> BuenTrato</div>
     <div class="nav-tabs">
-      <button class="nav-tab active"  onclick="goTo('home')">🏠 Inicio</button>
+      <button class="nav-tab active" onclick="goTo('home')">🏠 Inicio</button>
       <button class="nav-tab" onclick="goTo('quiz1')">🤔 ¿Es bullying?</button>
       <button class="nav-tab" onclick="goTo('quiz2')">💪 ¿Qué harías?</button>
       <button class="nav-tab" onclick="goTo('guia')">🗺️ ¿Qué hago?</button>
@@ -279,61 +195,22 @@
       </div>
     </div>
     <div class="cards-grid">
-      <div class="home-card card-purple" onclick="goTo('quiz1')" style="animation-delay:0.1s">
-        <span class="card-illo">🤔</span>
-        <div class="card-title">¿Esto es bullying?</div>
-        <div class="card-desc">Decide si cada situación es bullying o no</div>
-        <span class="card-tag tag-purple">Quiz interactivo</span>
-      </div>
-      <div class="home-card card-coral" onclick="goTo('quiz2')" style="animation-delay:0.15s">
-        <span class="card-illo">💪</span>
-        <div class="card-title">¿Qué harías tú?</div>
-        <div class="card-desc">Elige la mejor respuesta ante situaciones reales</div>
-        <span class="card-tag tag-coral">Opciones múltiples</span>
-      </div>
-      <div class="home-card card-teal" onclick="goTo('guia')" style="animation-delay:0.2s">
-        <span class="card-illo">🗺️</span>
-        <div class="card-title">¿Qué hago ahora?</div>
-        <div class="card-desc">Pasos claros para actuar cuando ves bullying</div>
-        <span class="card-tag tag-teal">Guía paso a paso</span>
-      </div>
-      <div class="home-card card-amber" onclick="goTo('reporte')" style="animation-delay:0.25s">
-        <span class="card-illo">📣</span>
-        <div class="card-title">Quiero reportar</div>
-        <div class="card-desc">Nadie sabrá que fuiste tú</div>
-        <span class="card-tag tag-amber">Anónimo y seguro</span>
-      </div>
-      <div class="home-card card-blue" onclick="goTo('videos')" style="animation-delay:0.3s">
-        <span class="card-illo">🎬</span>
-        <div class="card-title">Aprende más</div>
-        <div class="card-desc">Videos cortos sobre el buen trato</div>
-        <span class="card-tag tag-blue">Videos informativos</span>
-      </div>
-      <div class="home-card card-green" onclick="goTo('logros')" style="animation-delay:0.35s">
-        <span class="card-illo">🏆</span>
-        <div class="card-title">Mis logros</div>
-        <div class="card-desc">Gana insignias y sé un defensor</div>
-        <span class="card-tag tag-green">3 insignias ganadas</span>
-      </div>
+      <div class="home-card card-purple" onclick="goTo('quiz1')"><span class="card-illo">🤔</span><div class="card-title">¿Esto es bullying?</div><div class="card-desc">8 situaciones para identificar el bullying</div><span class="card-tag tag-purple">8 preguntas</span></div>
+      <div class="home-card card-coral" onclick="goTo('quiz2')"><span class="card-illo">💪</span><div class="card-title">¿Qué harías tú?</div><div class="card-desc">10 situaciones con opciones múltiples</div><span class="card-tag tag-coral">10 preguntas</span></div>
+      <div class="home-card card-teal" onclick="goTo('guia')"><span class="card-illo">🗺️</span><div class="card-title">¿Qué hago ahora?</div><div class="card-desc">Pasos claros para actuar cuando ves bullying</div><span class="card-tag tag-teal">Guía paso a paso</span></div>
+      <div class="home-card card-amber" onclick="goTo('reporte')"><span class="card-illo">📣</span><div class="card-title">Quiero reportar</div><div class="card-desc">Nadie sabrá que fuiste tú</div><span class="card-tag tag-amber">Anónimo y seguro</span></div>
+      <div class="home-card card-blue" onclick="goTo('videos')"><span class="card-illo">🎬</span><div class="card-title">Aprende más</div><div class="card-desc">Videos cortos sobre el buen trato</div><span class="card-tag tag-blue">Videos informativos</span></div>
+      <div class="home-card card-green" onclick="goTo('logros')"><span class="card-illo">🏆</span><div class="card-title">Mis logros</div><div class="card-desc">Gana insignias y sé un defensor</div><span class="card-tag tag-green">3 insignias ganadas</span></div>
     </div>
   </div>
 
   <!-- QUIZ 1 -->
   <div id="page-quiz1" class="page">
-    <div class="sec-header">
-      <div class="sec-icon-circle sic-purple">🤔</div>
-      <div class="sec-title">¿Esto es bullying?</div>
-    </div>
-    <div class="sec-sub">Lee cada situación y decide si es bullying o no. ¡Te explicamos por qué al final!</div>
+    <div class="sec-header"><div class="sec-icon-circle sic-purple">🤔</div><div class="sec-title">¿Esto es bullying?</div></div>
+    <div class="sec-sub">Lee cada situación y decide si es bullying o no. ¡Son 8 situaciones distintas!</div>
     <div id="q1-area">
-      <div class="prog-row">
-        <div class="prog-track"><div class="prog-fill" id="q1-prog" style="width:25%"></div></div>
-        <div class="prog-lbl" id="q1-lbl">1 de 4</div>
-      </div>
-      <div class="scene-card pop">
-        <div class="scene-illus" id="q1-illus"></div>
-        <div class="scene-txt" id="q1-txt"></div>
-      </div>
+      <div class="prog-row"><div class="prog-track"><div class="prog-fill" id="q1-prog" style="width:12.5%"></div></div><div class="prog-lbl" id="q1-lbl">1 de 8</div></div>
+      <div class="scene-card pop"><div class="scene-illus" id="q1-illus"></div><div class="scene-txt" id="q1-txt"></div></div>
       <div class="q-label">¿Esto es bullying?</div>
       <div class="choices" id="q1-choices"></div>
       <div class="feedback-box" id="q1-feedback"></div>
@@ -350,21 +227,12 @@
 
   <!-- QUIZ 2 -->
   <div id="page-quiz2" class="page">
-    <div class="sec-header">
-      <div class="sec-icon-circle sic-coral">💪</div>
-      <div class="sec-title">¿Qué harías tú?</div>
-    </div>
-    <div class="sec-sub">Lee la situación y elige la mejor respuesta. ¡Hay una opción correcta en cada pregunta!</div>
+    <div class="sec-header"><div class="sec-icon-circle sic-coral">💪</div><div class="sec-title">¿Qué harías tú?</div></div>
+    <div class="sec-sub">Lee la situación y elige la mejor respuesta. ¡Son 10 situaciones distintas!</div>
     <div id="q2-area">
-      <div class="prog-row">
-        <div class="prog-track"><div class="prog-fill" id="q2-prog" style="width:20%"></div></div>
-        <div class="prog-lbl" id="q2-lbl">1 de 5</div>
-      </div>
+      <div class="prog-row"><div class="prog-track"><div class="prog-fill" id="q2-prog" style="width:10%"></div></div><div class="prog-lbl" id="q2-lbl">1 de 10</div></div>
       <div class="scene-card pop">
-        <div class="scene-header">
-          <div class="scene-emoji" id="q2-emoji"></div>
-          <div class="scene-place" id="q2-place"></div>
-        </div>
+        <div class="scene-header"><div class="scene-emoji" id="q2-emoji"></div><div class="scene-place" id="q2-place"></div></div>
         <div class="scene-txt" id="q2-txt"></div>
       </div>
       <div class="q-label" id="q2-qlbl"></div>
@@ -383,10 +251,7 @@
 
   <!-- GUIA -->
   <div id="page-guia" class="page">
-    <div class="sec-header">
-      <div class="sec-icon-circle sic-teal">🗺️</div>
-      <div class="sec-title">¿Qué hago cuando veo bullying?</div>
-    </div>
+    <div class="sec-header"><div class="sec-icon-circle sic-teal">🗺️</div><div class="sec-title">¿Qué hago cuando veo bullying?</div></div>
     <div class="sec-sub">Sigue estos pasos. Tú puedes hacer una diferencia sin ponerte en peligro.</div>
     <div class="steps-list">
       <div class="step-item"><div class="step-num">1</div><div style="flex:1"><div class="step-title">No te rías ni aplaudas</div><div class="step-desc">Aunque todos lo hagan, no participar ya es una forma de ayudar. El agresor pierde poder cuando nadie lo apoya.</div></div><div class="step-illo">😶</div></div>
@@ -400,21 +265,14 @@
 
   <!-- REPORTE -->
   <div id="page-reporte" class="page">
-    <div class="sec-header">
-      <div class="sec-icon-circle sic-amber">📣</div>
-      <div class="sec-title">Quiero reportar</div>
-    </div>
+    <div class="sec-header"><div class="sec-icon-circle sic-amber">📣</div><div class="sec-title">Quiero reportar</div></div>
     <div class="sec-sub">Cuéntanos lo que viste. Tu reporte es confidencial y ayudará a que un adulto actúe.</div>
     <div id="form-area">
       <div class="anon-badge">🔒 Tu reporte es anónimo. Nadie sabrá que fuiste tú.</div>
-      <div class="form-group"><label class="form-label">¿Dónde ocurrió?</label>
-        <select id="r-lugar"><option value="">Elige un lugar...</option><option>En el recreo</option><option>En el salón de clases</option><option>En los pasillos</option><option>En el baño</option><option>Por WhatsApp u otra red social</option><option>En la entrada o salida del colegio</option></select></div>
-      <div class="form-group"><label class="form-label">¿Qué tipo de bullying fue?</label>
-        <select id="r-tipo"><option value="">Elige un tipo...</option><option>Físico (golpes, empujones)</option><option>Verbal (insultos, burlas)</option><option>Exclusión (dejar fuera del grupo)</option><option>Por internet (ciberbullying)</option><option>No estoy seguro</option></select></div>
-      <div class="form-group"><label class="form-label">Cuéntanos qué pasó (no necesitas poner nombres)</label>
-        <textarea id="r-desc" placeholder="Ejemplo: Vi que un grupo de niños molestaba a otro en el recreo..."></textarea></div>
-      <div class="form-group"><label class="form-label">¿Cuántas veces has visto que esto pasa?</label>
-        <select id="r-frecuencia"><option value="">Elige...</option><option>Solo una vez</option><option>Algunas veces</option><option>Casi todos los días</option><option>Todos los días</option></select></div>
+      <div class="form-group"><label class="form-label">¿Dónde ocurrió?</label><select id="r-lugar"><option value="">Elige un lugar...</option><option>En el recreo</option><option>En el salón de clases</option><option>En los pasillos</option><option>En el baño</option><option>Por WhatsApp u otra red social</option><option>En la entrada o salida del colegio</option></select></div>
+      <div class="form-group"><label class="form-label">¿Qué tipo de bullying fue?</label><select id="r-tipo"><option value="">Elige un tipo...</option><option>Físico (golpes, empujones)</option><option>Verbal (insultos, burlas)</option><option>Exclusión (dejar fuera del grupo)</option><option>Por internet (ciberbullying)</option><option>No estoy seguro</option></select></div>
+      <div class="form-group"><label class="form-label">Cuéntanos qué pasó (no necesitas poner nombres)</label><textarea id="r-desc" placeholder="Ejemplo: Vi que un grupo de niños molestaba a otro en el recreo..."></textarea></div>
+      <div class="form-group"><label class="form-label">¿Cuántas veces has visto que esto pasa?</label><select id="r-frecuencia"><option value="">Elige...</option><option>Solo una vez</option><option>Algunas veces</option><option>Casi todos los días</option><option>Todos los días</option></select></div>
       <button class="submit-btn" onclick="submitReport()">Enviar reporte 🚀</button>
     </div>
     <div class="success-msg" id="r-success">
@@ -427,10 +285,7 @@
 
   <!-- VIDEOS -->
   <div id="page-videos" class="page">
-    <div class="sec-header">
-      <div class="sec-icon-circle sic-blue">🎬</div>
-      <div class="sec-title">Aprende más</div>
-    </div>
+    <div class="sec-header"><div class="sec-icon-circle sic-blue">🎬</div><div class="sec-title">Aprende más</div></div>
     <div class="sec-sub">Videos cortos para entender el bullying y cómo vivir el buen trato.</div>
     <div class="videos-grid" id="videos-grid">
       <div class="video-card" onclick="playVideo(0)"><div class="video-thumb vt-purple">🤜<span class="play-badge">▶ 3 min</span></div><div class="video-info"><div class="video-title">¿Qué es el bullying?</div><div class="video-dur">Informativo</div></div></div>
@@ -450,18 +305,9 @@
 
   <!-- LOGROS -->
   <div id="page-logros" class="page">
-    <div class="sec-header">
-      <div class="sec-icon-circle sic-amber">🏆</div>
-      <div class="sec-title">Mis logros</div>
-    </div>
+    <div class="sec-header"><div class="sec-icon-circle sic-amber">🏆</div><div class="sec-title">Mis logros</div></div>
     <div class="sec-sub">Gana insignias completando actividades. ¡Conviértete en defensor del buen trato!</div>
-    <div class="puntos-bar">
-      <div class="puntos-illo float">🌟</div>
-      <div>
-        <div class="puntos-num">120 pts</div>
-        <div class="puntos-info">¡Sigue así, campeón!<div class="nivel-badge">Nivel: Defensor en entrenamiento</div></div>
-      </div>
-    </div>
+    <div class="puntos-bar"><div class="puntos-illo float">🌟</div><div><div class="puntos-num">120 pts</div><div class="puntos-info">¡Sigue así, campeón!<div class="nivel-badge">Nivel: Defensor en entrenamiento</div></div></div></div>
     <div class="logros-grid">
       <div class="logro-card earned"><span class="logro-illo">🧠</span><div class="logro-name">Detector experto</div><div class="logro-desc">Completaste el quiz ¿Es bullying?</div><span class="logro-lbl earned">¡Ganada! +30 pts</span></div>
       <div class="logro-card earned"><span class="logro-illo">💪</span><div class="logro-name">Decisor valiente</div><div class="logro-desc">Completaste el quiz ¿Qué harías?</div><span class="logro-lbl earned">¡Ganada! +30 pts</span></div>
@@ -471,25 +317,28 @@
       <div class="logro-card locked"><span class="logro-illo">🌟</span><div class="logro-name">Embajador del buen trato</div><div class="logro-desc">Gana todas las insignias</div><span class="logro-lbl locked">Bloqueada</span></div>
     </div>
   </div>
-
 </div>
 
 <script>
 const pageMap={home:0,quiz1:1,quiz2:2,guia:3,reporte:4,videos:5,logros:6};
-function goTo(page){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('page-'+page).classList.add('active');
-  document.querySelectorAll('.nav-tab')[pageMap[page]].classList.add('active');
+function goTo(p){
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(x=>x.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  document.querySelectorAll('.nav-tab')[pageMap[p]].classList.add('active');
   window.scrollTo(0,0);
 }
 
-/* QUIZ 1 */
+/* ===== QUIZ 1: 8 situaciones ===== */
 const q1Data=[
-  {scene:'Carlos empuja a Diego todos los días en el recreo y le quita su lonchera. Cuando Diego llora, Carlos se ríe y le dice que es un bebé.',illus:`<div class="char"><div class="avatar av-red">😠</div><div class="char-name">Carlos</div></div><div class="bubble">¡Dame eso, bebé llorón! Siempre te voy a quitar tu comida.</div><div class="char"><div class="avatar av-blue">😢</div><div class="char-name">Diego</div></div>`,answer:true,ok:'¡Muy bien! Esto SÍ es bullying. Carlos repite la agresión todos los días y Diego no puede defenderse solo.',fail:'Esto SÍ es bullying. Se repite todos los días, hay agresión física y verbal, y Diego no puede defenderse.'},
-  {scene:'Lucía y Sofía pelearon porque Lucía usó los colores de Sofía sin pedirlos. Sofía se enojó y le dijo "eres una egoísta". No se hablaron en el recreo.',illus:`<div class="char"><div class="avatar av-yellow">😤</div><div class="char-name">Sofía</div></div><div class="bubble">¡Eres una egoísta! ¡Eran mis colores!</div><div class="char"><div class="avatar av-green">😠</div><div class="char-name">Lucía</div></div>`,answer:false,ok:'¡Correcto! Esto NO es bullying. Es un conflicto normal: pasó una vez y las dos se enojaron por igual.',fail:'Esto NO es bullying. Pasó solo una vez y las dos tienen el mismo poder. El bullying se repite y hay una víctima.'},
-  {scene:'Un grupo creó un chat llamado "Sin Miguel" y le mandan mensajes todos los días diciéndole que es feo y que nadie lo quiere. Miguel llora solo en casa.',illus:`<div class="char"><div class="avatar av-blue">😭</div><div class="char-name">Miguel</div></div><div class="bubble bubble-danger">"Eres feo" "Nadie te quiere" "Ojalá no vinieras al colegio" 📱</div>`,answer:true,ok:'¡Excelente! Esto SÍ es bullying. Se llama ciberbullying: ocurre por internet, se repite todos los días y es un grupo contra una sola persona.',fail:'Esto SÍ es bullying aunque sea por celular. Se llama ciberbullying: grupo contra Miguel, todos los días, y él no puede defenderse.'},
-  {scene:'Ana ganó el concurso de dibujo. Valeria, aunque tenía celos, le dijo "felicidades", pero luego le contó a otra amiga que "Ana solo ganó por suerte".',illus:`<div class="char"><div class="avatar av-green">🏆</div><div class="char-name">Ana</div></div><div class="bubble">¡Gané el concurso de dibujo!</div><div class="char"><div class="avatar av-yellow">😒</div><div class="char-name">Valeria</div></div>`,answer:false,ok:'¡Muy bien! Esto NO es bullying. Valeria hizo algo que no está bien, pero fue una vez y no hay una víctima indefensa.',fail:'Esto NO es bullying. Valeria hizo algo inapropiado pero fue puntual. El bullying tiene víctima clara y se repite.'}
+  {scene:'Carlos empuja a Diego todos los días en el recreo y le quita su lonchera. Cuando Diego llora, Carlos se ríe y le dice que es un bebé.',illus:`<div class="char"><div class="avatar av-red">😠</div><div class="char-name">Carlos</div></div><div class="bubble">¡Dame eso, bebé llorón! Siempre te voy a quitar tu comida.</div><div class="char"><div class="avatar av-blue">😢</div><div class="char-name">Diego</div></div>`,answer:true,ok:'¡Muy bien! Esto SÍ es bullying. Carlos repite la agresión todos los días, hay agresión física y verbal, y Diego no puede defenderse solo.',fail:'Esto SÍ es bullying. Se repite todos los días, hay agresión física y verbal, y Diego no puede defenderse. Esas son las 3 claves del bullying.'},
+  {scene:'Lucía y Sofía pelearon porque Lucía usó los colores de Sofía sin pedirlos. Sofía se enojó y le dijo "eres una egoísta". No se hablaron en el recreo pero al día siguiente se reconciliaron.',illus:`<div class="char"><div class="avatar av-yellow">😤</div><div class="char-name">Sofía</div></div><div class="bubble">¡Eres una egoísta! ¡Eran mis colores!</div><div class="char"><div class="avatar av-green">😠</div><div class="char-name">Lucía</div></div>`,answer:false,ok:'¡Correcto! Esto NO es bullying. Es un conflicto normal entre amigas: ocurrió una sola vez, las dos se enojaron por igual y se reconciliaron.',fail:'Esto NO es bullying. Pasó solo una vez, las dos tienen el mismo poder y se reconciliaron. El bullying se repite y siempre hay una víctima clara.'},
+  {scene:'Un grupo creó un chat llamado "Sin Miguel" y le mandan memes burlandose de él todos los días. Miguel llora solo en casa pero no le cuenta a nadie por miedo.',illus:`<div class="char"><div class="avatar av-blue">😭</div><div class="char-name">Miguel</div></div><div class="bubble bubble-danger">"Eres feo" "Nadie te quiere" "Ojalá no vinieras al colegio" 📱</div>`,answer:true,ok:'¡Excelente! Esto SÍ es bullying. Se llama ciberbullying: ocurre por internet, se repite todos los días, es un grupo contra una sola persona y Miguel no puede defenderse.',fail:'Esto SÍ es bullying aunque sea por celular. Se llama ciberbullying. Hay tres claves: se repite, es un grupo contra uno, y Miguel no puede defenderse.'},
+  {scene:'Ana ganó el concurso de dibujo. Valeria, aunque tenía celos, le dijo "felicidades", pero luego le contó a otra amiga que "Ana solo ganó por suerte".',illus:`<div class="char"><div class="avatar av-green">🏆</div><div class="char-name">Ana</div></div><div class="bubble">¡Gané el concurso de dibujo!</div><div class="char"><div class="avatar av-yellow">😒</div><div class="char-name">Valeria</div></div>`,answer:false,ok:'¡Muy bien! Esto NO es bullying. Valeria hizo algo que no está bien, pero fue una vez. No hay agresión repetida ni víctima indefensa.',fail:'Esto NO es bullying. Valeria hizo algo inapropiado pero fue puntual. El bullying tiene víctima clara, agresor y se repite en el tiempo.'},
+  {scene:'Todos los días en el recreo, un grupo de niños elige a Renata para burlarse de su forma de caminar y la llaman "pata coja". Renata ya no quiere salir al recreo.',illus:`<div class="char"><div class="avatar av-pink">😔</div><div class="char-name">Renata</div></div><div class="bubble bubble-danger">Grupo: "¡Pata coja! ¡Pata coja!" (todos los días)</div>`,answer:true,ok:'¡Correcto! Esto SÍ es bullying verbal. Se repite todos los días, hay un grupo contra una sola persona, y Renata ya no quiere ir al recreo por eso.',fail:'Esto SÍ es bullying verbal. El grupo se burla de Renata todos los días, ella no puede defenderse y ya está cambiando su comportamiento por eso.'},
+  {scene:'Rodrigo y Mateo son mejores amigos. Hoy Rodrigo llegó tarde y Mateo, molesto, le dijo "siempre llegas tarde, eres un irresponsable". Luego se disculpó y siguieron jugando juntos.',illus:`<div class="char"><div class="avatar av-orange">😤</div><div class="char-name">Mateo</div></div><div class="bubble">¡Siempre llegas tarde! Eres un irresponsable.</div><div class="char"><div class="avatar av-blue">😟</div><div class="char-name">Rodrigo</div></div>`,answer:false,ok:'¡Muy bien! Esto NO es bullying. Mateo dijo algo hiriente pero luego se disculpó. Es un conflicto puntual entre amigos, no un patrón repetido.',fail:'Esto NO es bullying. Fue un conflicto puntual entre amigos y Mateo se disculpó. El bullying se repite continuamente y no termina con una disculpa rápida.'},
+  {scene:'Cada vez que Paula levanta la mano en clase para responder, un grupo de compañeros suspira fuerte, pone los ojos en blanco y se ríe en voz baja. Paula ha dejado de participar en clase.',illus:`<div class="char"><div class="avatar av-pink">🙋</div><div class="char-name">Paula</div></div><div class="bubble bubble-danger">Grupo: suspiros, ojos en blanco y risas... cada vez que Paula habla.</div>`,answer:true,ok:'¡Exacto! Esto SÍ es bullying. Aunque no hay insultos directos, la exclusión y el ridículo sistemático también son bullying. Paula ya dejó de participar por culpa de esto.',fail:'Esto SÍ es bullying, aunque sea sutil. Ridiculizar a alguien sistemáticamente en clase, haciendo que deje de participar, es una forma de acoso. Se repite y tiene un impacto claro en Paula.'},
+  {scene:'José y Tomás discutieron fuerte porque José no quiso prestarle su juego a Tomás. Los dos se dijeron cosas feas. Al día siguiente ya estaban jugando juntos en el recreo.',illus:`<div class="char"><div class="avatar av-orange">😠</div><div class="char-name">José</div></div><div class="bubble">¡No te lo presto y punto!</div><div class="char"><div class="avatar av-blue">😡</div><div class="char-name">Tomás</div></div>`,answer:false,ok:'¡Correcto! Esto NO es bullying. Fue una pelea entre dos personas con igual poder y se resolvió sola al día siguiente. Eso es un conflicto normal.',fail:'Esto NO es bullying. Fue una pelea puntual entre dos que tienen el mismo poder, y se resolvió sola. El bullying necesita repetición y una víctima que no puede defenderse.'}
 ];
 let q1cur=0,q1score=0,q1answered=false;
 function q1Load(i){
@@ -517,24 +366,34 @@ document.getElementById('q1-next').addEventListener('click',()=>{
   else{
     document.getElementById('q1-area').style.display='none';
     const sc=document.getElementById('q1-score');sc.className='score-wrap show';
-    const illos=['😅','🙂','😄','🏆'];
-    document.getElementById('q1-illo-res').textContent=illos[q1score];
+    const pct=Math.round((q1score/q1Data.length)*100);
+    const illos=['😅','🙂','😄','😄','🌟','🌟','🏆','🏆','🥇'];
+    document.getElementById('q1-illo-res').textContent=illos[Math.min(q1score,8)];
     document.getElementById('q1-score-num').textContent=`${q1score}/${q1Data.length}`;
-    const msgs=[{l:'Sigue practicando 💪',m:'Recuerda las 3 claves: el bullying se repite, hay una víctima y hay desequilibrio de poder. ¡Inténtalo de nuevo!'},{l:'Vas por buen camino 🙂',m:'No todo conflicto es bullying. El bullying se repite y hay una víctima que no puede defenderse.'},{l:'¡Muy bien! 😄',m:'Ya sabes distinguir el bullying de un conflicto normal. ¡Eso es muy importante para poder actuar!'},{l:'¡Eres un experto! 🏆',m:'¡Puntaje perfecto! Identificas el bullying perfectamente. Ahora puedes ayudar a tus amigos a reconocerlo también.'}];
-    document.getElementById('q1-score-lbl').textContent=msgs[q1score].l;
-    document.getElementById('q1-score-msg').textContent=msgs[q1score].m;
+    let lbl,msg;
+    if(pct<50){lbl='Sigue practicando 💪';msg='Recuerda las 3 claves: el bullying se repite, hay una víctima y hay desequilibrio de poder. ¡Puedes intentarlo de nuevo!';}
+    else if(pct<75){lbl='Vas por buen camino 🙂';msg='No todo conflicto es bullying. El bullying se repite y hay una víctima que no puede defenderse. ¡Casi!';}
+    else if(pct<100){lbl='¡Muy bien! 😄';msg='Ya sabes distinguir el bullying de un conflicto normal. ¡Eso es muy importante para poder actuar y ayudar!';}
+    else{lbl='¡Eres un experto! 🏆';msg='¡Puntaje perfecto en 8 situaciones! Identificas el bullying con precisión. Tus compañeros tienen suerte de tenerte.';}
+    document.getElementById('q1-score-lbl').textContent=lbl;
+    document.getElementById('q1-score-msg').textContent=msg;
   }
 });
 function q1Restart(){q1cur=0;q1score=0;q1answered=false;document.getElementById('q1-area').style.display='block';document.getElementById('q1-score').className='score-wrap';q1Load(0);}
 q1Load(0);
 
-/* QUIZ 2 */
+/* ===== QUIZ 2: 10 situaciones ===== */
 const q2Data=[
-  {emoji:'😟',place:'🏃 En el recreo',scene:'Estás jugando fútbol en el recreo y ves que un grupo de niños le quita la pelota a Tomás, lo empujan y se burlan de él diciéndole que es malo jugando. Tomás se queda solo y con cara de querer llorar.',question:'¿Qué harías tú en ese momento?',options:[{text:'Te ríes con el grupo porque no quieres quedar mal con ellos.',correct:false},{text:'Te haces el que no vio nada y sigues jugando por tu lado.',correct:false},{text:'Te acercas a Tomás, le dices "oye, ven juega con nosotros" y lo invitas a tu grupo.',correct:true},{text:'Le gritas al grupo que paren, aunque eso podría meterte en problemas.',correct:false}],ok:'¡Excelente! Invitar a Tomás a tu grupo lo saca de la situación sin confrontar al agresor. Así lo proteges sin ponerte en riesgo.',fail:'La mejor opción era acercarte a Tomás e invitarlo a tu grupo. Así lo sacas de la situación y él siente que alguien lo apoya.'},
-  {emoji:'📱',place:'💬 Por WhatsApp',scene:'Tu amiga Valeria te muestra su celular llorando: hay un grupo de WhatsApp llamado "Sin Valeria" donde varios compañeros mandan memes burlándose de su ropa. Le dicen que nadie la quiere.',question:'¿Cuál es la mejor forma de ayudar a Valeria?',options:[{text:'Le dices que no le haga caso, que son unos tontos y ya pasará.',correct:false},{text:'La escuchas, le dices que no está sola y juntos se lo cuentan a un adulto de confianza hoy mismo.',correct:true},{text:'Entras al grupo y escribes que lo que hacen está mal.',correct:false},{text:'Le dices que elimine WhatsApp para que no lo vea más.',correct:false}],ok:'¡Muy bien! Escucharla y acompañarla a contárselo a un adulto es lo más efectivo. El ciberbullying necesita intervención de adultos.',fail:'Lo más efectivo era escucharla y acompañarla a contárselo a un adulto hoy mismo. El ciberbullying no para solo.'},
-  {emoji:'🍱',place:'🍽️ En el comedor',scene:'Cada día Diego come solo porque un grupo le dice a todos que no se sienten con él. Hoy vuelve a pasar: Diego busca sitio con la bandeja y todos le voltean la cara.',question:'¿Qué es lo más valiente y útil que puedes hacer?',options:[{text:'Te sientas con Diego y le haces conversación como si fuera lo más normal del mundo.',correct:true},{text:'Le preguntas al profesor de turno si puede cambiar los sitios de todos.',correct:false},{text:'Esperas a que termine el almuerzo y luego le preguntas si está bien.',correct:false},{text:'No haces nada porque si te juntas con él, te pueden hacer lo mismo a ti.',correct:false}],ok:'¡Perfecto! Sentarte con Diego en ese momento es exactamente lo que necesita. Eso rompe el patrón de exclusión.',fail:'La respuesta más poderosa era simplemente sentarte con Diego en ese momento. Actuar en el instante vale más que cualquier conversación después.'},
-  {emoji:'😰',place:'📚 En el salón',scene:'Tu compañero Luis te confiesa en secreto que un niño más grande lo amenaza todos los días a la salida. Le dice que si le cuenta a alguien, las cosas se pondrán peor.',question:'¿Qué le dices a Luis?',options:[{text:'Guardas el secreto porque te lo pidió y no quieres traicionarlo.',correct:false},{text:'Lo convences de que juntos le cuenten a un adulto de confianza, explicándole que eso es lo único que lo va a proteger.',correct:true},{text:'Le dices que enfrente al niño mayor y que no le tenga miedo.',correct:false},{text:'Le cuentas tú solo al profesor sin avisar a Luis.',correct:false}],ok:'¡Exactamente! El secreto protege al agresor, no a Luis. Ir juntos a un adulto hace que Luis no se sienta solo.',fail:'Lo correcto era convencerlo de ir juntos a un adulto. Guardar el secreto solo protege al agresor.'},
-  {emoji:'😢',place:'🏅 En educación física',scene:'En la clase de educación física forman equipos y nadie quiere a Andrea. Cuando el profesor pregunta quién la recibe, todos miran para otro lado. Andrea se queda de pie, roja de vergüenza.',question:'¿Cuál es la mejor respuesta en ese momento?',options:[{text:'Esperas que el profesor lo resuelva, él es el adulto y es su responsabilidad.',correct:false},{text:'Le dices en voz alta al profesor que tú no la quieres tampoco para no quedar mal.',correct:false},{text:'Levantas la mano y dices "Andrea puede estar en mi equipo" antes de que el silencio se haga más largo.',correct:true},{text:'Después de clase le dices a Andrea en privado que lo sientes mucho.',correct:false}],ok:'¡Eso es ser un verdadero defensor del buen trato! Actuar en el momento, en público, es lo que más importa. Una sola voz valiente puede cambiar todo.',fail:'La respuesta más poderosa era levantar la mano en ese momento. Una sola voz valiente rompe el silencio cómplice.'}
+  {emoji:'😟',place:'🏃 En el recreo',scene:'Estás jugando fútbol y ves que un grupo le quita la pelota a Tomás, lo empujan y se burlan diciéndole que es malo. Tomás se queda solo con cara de querer llorar.',question:'¿Qué harías tú en ese momento?',options:[{text:'Te ríes con el grupo para no quedar mal con ellos.',correct:false},{text:'Te haces el que no vio nada y sigues jugando.',correct:false},{text:'Te acercas a Tomás y lo invitas a jugar en tu grupo.',correct:true},{text:'Le gritas al grupo que paren, aunque eso podría meterte en problemas.',correct:false}],ok:'¡Excelente! Invitar a Tomás a tu grupo lo saca de la situación sin confrontar al agresor. Lo proteges sin ponerte en riesgo.',fail:'La mejor opción era invitar a Tomás a tu grupo. Así lo sacas de la situación sin confrontar al agresor y él siente que tiene amigos.'},
+  {emoji:'📱',place:'💬 Por WhatsApp',scene:'Tu amiga Valeria te muestra su celular llorando: hay un grupo donde le mandan memes burlándose de ella todos los días. Le dicen que nadie la quiere.',question:'¿Cuál es la mejor forma de ayudar a Valeria?',options:[{text:'Le dices que no le haga caso, que ya pasará.',correct:false},{text:'La escuchas, le dices que no está sola y juntos se lo cuentan a un adulto hoy mismo.',correct:true},{text:'Entras al grupo y escribes que lo que hacen está mal.',correct:false},{text:'Le dices que elimine WhatsApp para que no lo vea.',correct:false}],ok:'¡Muy bien! Escucharla y acompañarla a contárselo a un adulto es lo más efectivo. El ciberbullying necesita intervención de adultos.',fail:'Lo más efectivo era escucharla y acompañarla a contárselo a un adulto hoy mismo. El ciberbullying no para solo.'},
+  {emoji:'🍱',place:'🍽️ En el comedor',scene:'Cada día Diego come solo porque un grupo le dice a todos que no se sienten con él. Hoy vuelve a pasar: busca sitio con su bandeja y todos le voltean la cara.',question:'¿Qué es lo más valiente y útil que puedes hacer?',options:[{text:'Te sientas con Diego y le haces conversación como si fuera lo más normal del mundo.',correct:true},{text:'Le preguntas al profesor si puede cambiar los sitios de todos.',correct:false},{text:'Esperas que termine el almuerzo y luego le preguntas cómo está.',correct:false},{text:'No haces nada porque si te juntas con él, te pueden hacer lo mismo.',correct:false}],ok:'¡Perfecto! Sentarte con Diego en ese momento es exactamente lo que necesita. Eso rompe el patrón de exclusión sin confrontar a nadie.',fail:'La respuesta más poderosa era sentarte con Diego en ese momento. Actuar en el instante vale más que cualquier conversación después.'},
+  {emoji:'😰',place:'📚 En el salón',scene:'Tu compañero Luis te confiesa que un niño más grande lo amenaza todos los días a la salida. Le dice que si le cuenta a alguien, las cosas se pondrán peor.',question:'¿Qué le dices a Luis?',options:[{text:'Guardas el secreto porque te lo pidió.',correct:false},{text:'Lo convences de que juntos le cuenten a un adulto de confianza, porque eso es lo único que lo va a proteger.',correct:true},{text:'Le dices que enfrente al niño mayor y que no le tenga miedo.',correct:false},{text:'Le cuentas tú solo al profesor sin avisar a Luis.',correct:false}],ok:'¡Exactamente! El secreto protege al agresor, no a Luis. Ir juntos a un adulto hace que Luis no se sienta solo y el adulto pueda actuar bien.',fail:'Lo correcto era convencerlo de ir juntos a un adulto. Guardar el secreto solo protege al agresor.'},
+  {emoji:'😢',place:'🏅 En educación física',scene:'Forman equipos y nadie quiere a Andrea. Cuando el profesor pregunta quién la recibe, todos miran para otro lado. Andrea se queda de pie, roja de vergüenza.',question:'¿Cuál es la mejor respuesta en ese momento?',options:[{text:'Esperas que el profesor lo resuelva.',correct:false},{text:'Le dices al profesor que tú tampoco la quieres para no quedar mal.',correct:false},{text:'Levantas la mano y dices "Andrea puede estar en mi equipo" antes de que el silencio se haga más largo.',correct:true},{text:'Después de clase le dices a Andrea en privado que lo sientes.',correct:false}],ok:'¡Eso es ser un verdadero defensor! Actuar en el momento, en público, es lo que más importa. Una sola voz valiente puede cambiar todo.',fail:'La respuesta más poderosa era levantar la mano en ese momento. Una sola voz valiente rompe el silencio cómplice.'},
+  {emoji:'📓',place:'📚 En clases',scene:'Ves que Bruno, el más grande del salón, le exige a Nico cada semana que le haga las tareas. Si Nico no obedece, Bruno lo amenaza con golpearlo en la salida. Nico siempre llega con cara de miedo.',question:'¿Qué deberías hacer tú que lo estás viendo?',options:[{text:'No te metes porque no es tu problema.',correct:false},{text:'Le dices a Nico que se ponga firme y no le haga las tareas.',correct:false},{text:'Le cuentas a un adulto de confianza lo que viste, aunque Nico no te lo haya pedido.',correct:true},{text:'Le dices a Bruno en privado que lo que hace está mal.',correct:false}],ok:'¡Muy bien! Como testigo, contarle a un adulto lo que viste es lo más responsable. No necesitas que Nico te lo pida para actuar.',fail:'Lo correcto era contarle a un adulto lo que viste. Como testigo tienes mucho poder. No necesitas permiso de Nico para reportar algo que está mal.'},
+  {emoji:'🎒',place:'🏫 En la entrada del colegio',scene:'Cada mañana, un grupo de niños mayores le quita la lonchera o el dinero a Piero en la entrada del colegio. Piero no dice nada porque tiene miedo y ya llega al aula sin desayunar.',question:'¿Cuál es la mejor manera de ayudarlo?',options:[{text:'Le das parte de tu lonchera a Piero para que no pase hambre.',correct:false},{text:'Grabas con tu celular lo que pasa y se lo muestras a un adulto del colegio hoy.',correct:true},{text:'Le dices a Piero que llegue más temprano para evitarlos.',correct:false},{text:'Enfrentas tú solo al grupo de niños mayores.',correct:false}],ok:'¡Excelente! Tener evidencia y mostrársela a un adulto del colegio es la forma más efectiva de parar esto. El adulto puede actuar con pruebas.',fail:'La mejor opción era documentar lo que pasa y mostrárselo a un adulto del colegio. Así el adulto tiene pruebas para actuar de forma efectiva.'},
+  {emoji:'🖥️',place:'💻 En clase de computación',scene:'Ves que tus compañeros están creando un perfil falso con la foto de Camila para burlarse de ella en redes sociales. Se están riendo mucho y te invitan a participar.',question:'¿Qué haces?',options:[{text:'Participas un poco para no quedarte afuera del grupo.',correct:false},{text:'No participas pero tampoco dices nada para no meterte en problemas.',correct:false},{text:'Te niegas a participar, le avisas a Camila en privado y le cuentas a un adulto lo que viste.',correct:true},{text:'Le dices al grupo que eso está mal y los convences de borrarlo.',correct:false}],ok:'¡Perfecto! Negarte, avisar a Camila y reportarlo a un adulto es la respuesta correcta. Tú no eres cómplice y Camila recibe ayuda.',fail:'Lo correcto era negarte, avisar a Camila y reportarlo a un adulto. Quedarte callado también hace daño porque el bullying continúa.'},
+  {emoji:'🤫',place:'🏃 En el patio',scene:'Tu amigo te pide que no le cuentes a nadie que llora solo en el baño porque un grupo lo molesta. Te dice que si cuentas algo, lo negarás todo y quedará peor.',question:'¿Qué decides hacer?',options:[{text:'Respetas su decisión y guardas el secreto.',correct:false},{text:'Le explicas con calma que entiendes su miedo, pero que lo que le pasa es serio y necesita ayuda de un adulto, y le propones ir juntos.',correct:true},{text:'Vas solo donde el director sin decirle nada a tu amigo.',correct:false},{text:'Hablas con el grupo que lo molesta para que paren.',correct:false}],ok:'¡Muy bien! Validar su miedo y convencerlo de ir juntos es lo más respetuoso y efectivo. Así no lo traicionas y sí lo proteges.',fail:'Lo correcto era explicarle que lo entiendes pero que necesita ayuda de un adulto, y proponerle ir juntos. Eso respeta su confianza y lo protege.'},
+  {emoji:'🌐',place:'💬 En redes sociales',scene:'En el Instagram del salón ves que varios compañeros están comentando cosas crueles en una foto de Jimena: le dicen que es fea, que se cambie de colegio y usan emojis para burlarse. Jimena no ha respondido nada.',question:'¿Qué puedes hacer tú desde tu celular ahora mismo?',options:[{text:'Le das like a los comentarios buenos pero ignoras los malos.',correct:false},{text:'Escribes un comentario defendiendo a Jimena y le envías un mensaje privado diciéndole que no está sola.',correct:true},{text:'Bloqueas a las personas que escriben cosas malas.',correct:false},{text:'No haces nada porque no es tu problema y no la conoces bien.',correct:false}],ok:'¡Genial! Escribir un mensaje público de apoyo y uno privado hace dos cosas: muestra a los agresores que hay alguien que defiende, y le da apoyo directo a Jimena.',fail:'Lo mejor era escribir un comentario de apoyo y enviarle un mensaje privado a Jimena. Eso rompe el silencio cómplice y le muestra que no está sola.'}
 ];
 let q2cur=0,q2score=0,q2answered=false;
 const letters=['A','B','C','D'];
@@ -565,12 +424,18 @@ document.getElementById('q2-next').addEventListener('click',()=>{
   else{
     document.getElementById('q2-area').style.display='none';
     const sc=document.getElementById('q2-score');sc.className='score-wrap show';
-    const illos=['🎯','😊','😄','🌟','🏆'];
-    document.getElementById('q2-illo-res').textContent=illos[q2score];
+    const pct=Math.round((q2score/q2Data.length)*100);
+    const illos=['🎯','😊','😊','😄','😄','🌟','🌟','🏆','🏆','🥇','🥇'];
+    document.getElementById('q2-illo-res').textContent=illos[Math.min(q2score,10)];
     document.getElementById('q2-score-num').textContent=`${q2score}/${q2Data.length}`;
-    const msgs=[{l:'Sigue practicando 💪',m:'Recuerda: actúa en el momento, acompaña a la víctima y avisa a un adulto de confianza.'},{l:'Vas por buen camino 🙂',m:'La mejor respuesta casi siempre es acompañar a quien está siendo víctima y avisar a un adulto.'},{l:'¡Muy bien! 😄',m:'Ya sabes cómo actuar en la mayoría de situaciones. Con práctica, cada vez te será más fácil reaccionar bien.'},{l:'¡Genial! 🌟',m:'Casi perfecto. Eres alguien en quien tus compañeros pueden confiar.'},{l:'¡Defensor del buen trato! 🏆',m:'¡Puntaje perfecto! Sabes exactamente cómo actuar en cada situación. Tus compañeros tienen suerte de tenerte.'}];
-    document.getElementById('q2-score-lbl').textContent=msgs[q2score].l;
-    document.getElementById('q2-score-msg').textContent=msgs[q2score].m;
+    let lbl,msg;
+    if(pct<50){lbl='Sigue practicando 💪';msg='Recuerda: actúa en el momento, acompaña a la víctima y avisa a un adulto de confianza. ¡Inténtalo de nuevo!';}
+    else if(pct<70){lbl='Vas por buen camino 🙂';msg='La mejor respuesta casi siempre es acompañar a quien está siendo víctima y avisar a un adulto. ¡Sigue así!';}
+    else if(pct<90){lbl:'¡Muy bien! 😄';msg:'Ya sabes cómo actuar en la mayoría de situaciones. Con práctica, cada vez te será más fácil reaccionar bien.';}
+    else if(pct<100){lbl='¡Genial! 🌟';msg='Casi perfecto. Eres alguien en quien tus compañeros pueden confiar. ¡Eres un defensor del buen trato!';}
+    else{lbl='¡Campeón del buen trato! 🥇';msg='¡Puntaje perfecto en 10 situaciones! Sabes exactamente cómo actuar. Tus compañeros tienen mucha suerte de tenerte.';}
+    document.getElementById('q2-score-lbl').textContent=lbl;
+    document.getElementById('q2-score-msg').textContent=msg;
   }
 });
 function q2Restart(){q2cur=0;q2score=0;q2answered=false;document.getElementById('q2-area').style.display='block';document.getElementById('q2-score').className='score-wrap';q2Load(0);}
@@ -591,23 +456,15 @@ function resetReport(){
 
 /* VIDEOS */
 const videos=[
-  {title:'¿Qué es el bullying?',desc:'El bullying es cuando alguien molesta, insulta o lastima a otra persona repetidamente. No es una pelea normal: siempre hay una víctima que no puede defenderse sola. Aprende a reconocerlo.'},
+  {title:'¿Qué es el bullying?',desc:'El bullying es cuando alguien molesta, insulta o lastima a otra persona repetidamente. No es una pelea normal: siempre hay una víctima que no puede defenderse sola.'},
   {title:'El poder del testigo',desc:'¿Sabías que los testigos tienen más poder que el agresor? Cuando alguien observa y no hace nada, el agresor siente que tiene permiso. Pero si alguien actúa, todo cambia.'},
   {title:'Ciberbullying: ¿qué es?',desc:'El ciberbullying es el bullying que ocurre por internet, WhatsApp o redes sociales. Puede ser tan dañino como el bullying en persona porque no para cuando sales del colegio.'},
   {title:'Cómo pedir ayuda',desc:'Pedir ayuda no es de cobardes, es de valientes. Aprende cómo hablar con un adulto de confianza sobre el bullying y qué puedes decirle para que te tome en serio.'},
   {title:'Buen trato en el recreo',desc:'El recreo puede ser el mejor momento del día para todos. Aprende pequeñas acciones que hacen el recreo más seguro y divertido para ti y tus compañeros.'},
   {title:'Historia de un embajador',desc:'Conoce la historia de un niño que decidió actuar cuando vio bullying en su colegio. Sus pequeñas acciones cambiaron el ambiente de todo su salón.'}
 ];
-function playVideo(i){
-  document.getElementById('videos-grid').style.display='none';
-  document.getElementById('video-player').className='video-player show';
-  document.getElementById('v-title').textContent=videos[i].title;
-  document.getElementById('v-desc').textContent=videos[i].desc;
-}
-function closeVideo(){
-  document.getElementById('videos-grid').style.display='grid';
-  document.getElementById('video-player').className='video-player';
-}
+function playVideo(i){document.getElementById('videos-grid').style.display='none';document.getElementById('video-player').className='video-player show';document.getElementById('v-title').textContent=videos[i].title;document.getElementById('v-desc').textContent=videos[i].desc;}
+function closeVideo(){document.getElementById('videos-grid').style.display='grid';document.getElementById('video-player').className='video-player';}
 </script>
 </body>
 </html>
